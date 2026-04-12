@@ -54,5 +54,47 @@
     });
   });
 
+  function activateSubpanel(subId) {
+    document.querySelectorAll('.subtab').forEach(function (btn) {
+      var match = btn.getAttribute('data-subpanel') === subId;
+      btn.classList.toggle('subtab--active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+    document.querySelectorAll('#panel-problems .subpanel').forEach(function (p) {
+      var match = p.id === 'subpanel-' + subId;
+      if (match) {
+        p.removeAttribute('hidden');
+      } else {
+        p.setAttribute('hidden', '');
+      }
+    });
+  }
+
+  document.querySelectorAll('.subtab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var sub = btn.getAttribute('data-subpanel');
+      if (sub) activateSubpanel(sub);
+    });
+  });
+
+  document.querySelectorAll('.solution-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('aria-controls');
+      if (!id) return;
+      var panel = document.getElementById(id);
+      if (!panel) return;
+      var isHidden = panel.hasAttribute('hidden');
+      if (isHidden) {
+        panel.removeAttribute('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Скрыть ответ';
+      } else {
+        panel.setAttribute('hidden', '');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Показать ответ';
+      }
+    });
+  });
+
   renderMath();
 })();

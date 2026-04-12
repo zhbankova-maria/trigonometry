@@ -90,12 +90,21 @@
 
     <section id="panel-problems" class="panel" role="tabpanel" aria-labelledby="tab-problems" tabindex="0" hidden>
       <h2>Задачи с решениями</h2>
+      <p class="panel-lead">Выберите уровень сложности. В каждом разделе — три задачи. Нажмите «Показать ответ», чтобы увидеть решение.</p>
 
+      <div class="subtabs" role="tablist" aria-label="Уровень сложности задач">
+        <button type="button" class="subtab subtab--active" role="tab" id="subtab-oge" aria-selected="true" aria-controls="subpanel-oge" data-subpanel="oge">Уровень ОГЭ</button>
+        <button type="button" class="subtab" role="tab" id="subtab-ege" aria-selected="false" aria-controls="subpanel-ege" data-subpanel="ege">Уровень ЕГЭ</button>
+        <button type="button" class="subtab" role="tab" id="subtab-uni" aria-selected="false" aria-controls="subpanel-uni" data-subpanel="uni">Уровень вуза</button>
+      </div>
+
+      <div id="subpanel-oge" class="subpanel" role="tabpanel" aria-labelledby="subtab-oge" tabindex="0">
       <article class="problem">
-        <h3>Задача 1</h3>
+        <h4 class="problem__name">Задача 1</h4>
         <p class="problem-text">Упростите выражение <span class="math-inline" data-latex="\sin^4 x + \cos^4 x + 2\sin^2 x\cos^2 x"></span>.</p>
-        <div class="solution">
-          <h4>Решение</h4>
+        <button type="button" class="solution-toggle" id="btn-sol-oge-1" aria-expanded="false" aria-controls="sol-oge-1">Показать ответ</button>
+        <div class="solution" id="sol-oge-1" role="region" aria-labelledby="btn-sol-oge-1" hidden>
+          <h4 class="solution__heading">Решение</h4>
           <p>Заметим, что <span class="math-inline" data-latex="2\sin^2 x\cos^2 x"></span> дополняет сумму квадратов до полного квадрата:</p>
           <div class="math-display" data-latex="\sin^4 x + \cos^4 x + 2\sin^2 x\cos^2 x = (\sin^2 x + \cos^2 x)^2"></div>
           <p>По основному тождеству <span class="math-inline" data-latex="\sin^2 x + \cos^2 x = 1"></span>, получаем</p>
@@ -105,10 +114,11 @@
       </article>
 
       <article class="problem">
-        <h3>Задача 2</h3>
+        <h4 class="problem__name">Задача 2</h4>
         <p class="problem-text">Докажите тождество <span class="math-inline" data-latex="\dfrac{1-\cos 2\alpha}{\sin 2\alpha} = \operatorname{tg}\alpha"></span> (при <span class="math-inline" data-latex="\sin 2\alpha \neq 0"></span>).</p>
-        <div class="solution">
-          <h4>Решение</h4>
+        <button type="button" class="solution-toggle" id="btn-sol-oge-2" aria-expanded="false" aria-controls="sol-oge-2">Показать ответ</button>
+        <div class="solution" id="sol-oge-2" role="region" aria-labelledby="btn-sol-oge-2" hidden>
+          <h4 class="solution__heading">Решение</h4>
           <p>Используем формулы двойного угла:</p>
           <div class="math-display" data-latex="1 - \cos 2\alpha = 2\sin^2\alpha,\qquad \sin 2\alpha = 2\sin\alpha\cos\alpha"></div>
           <p>Тогда</p>
@@ -118,10 +128,26 @@
       </article>
 
       <article class="problem">
-        <h3>Задача 3</h3>
+        <h4 class="problem__name">Задача 3</h4>
+        <p class="problem-text">Найдите <span class="math-inline" data-latex="\sin\alpha"></span>, если <span class="math-inline" data-latex="\cos\alpha = \dfrac{3}{5}"></span> и угол <span class="math-inline" data-latex="\alpha"></span> лежит в I четверти.</p>
+        <button type="button" class="solution-toggle" id="btn-sol-oge-3" aria-expanded="false" aria-controls="sol-oge-3">Показать ответ</button>
+        <div class="solution" id="sol-oge-3" role="region" aria-labelledby="btn-sol-oge-3" hidden>
+          <h4 class="solution__heading">Решение</h4>
+          <p>По основному тождеству <span class="math-inline" data-latex="\sin^2\alpha + \cos^2\alpha = 1"></span>:</p>
+          <div class="math-display" data-latex="\sin^2\alpha = 1 - \cos^2\alpha = 1 - \dfrac{9}{25} = \dfrac{16}{25}."></div>
+          <p>В I четверти <span class="math-inline" data-latex="\sin\alpha > 0"></span>, поэтому <span class="math-inline" data-latex="\sin\alpha = \dfrac{4}{5}"></span>.</p>
+          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{4}{5}"></span>.</p>
+        </div>
+      </article>
+      </div>
+
+      <div id="subpanel-ege" class="subpanel" role="tabpanel" aria-labelledby="subtab-ege" tabindex="0" hidden>
+      <article class="problem">
+        <h4 class="problem__name">Задача 1</h4>
         <p class="problem-text">Вычислите <span class="math-inline" data-latex="\sin 15^\circ"></span> без калькулятора.</p>
-        <div class="solution">
-          <h4>Решение</h4>
+        <button type="button" class="solution-toggle" id="btn-sol-ege-1" aria-expanded="false" aria-controls="sol-ege-1">Показать ответ</button>
+        <div class="solution" id="sol-ege-1" role="region" aria-labelledby="btn-sol-ege-1" hidden>
+          <h4 class="solution__heading">Решение</h4>
           <p>Представим <span class="math-inline" data-latex="15^\circ = 45^\circ - 30^\circ"></span> и применим формулу синуса разности:</p>
           <div class="math-display" data-latex="\sin(45^\circ-30^\circ) = \sin 45^\circ\cos 30^\circ - \cos 45^\circ\sin 30^\circ"></div>
           <div class="math-display" data-latex="= \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} - \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2} = \dfrac{\sqrt{2}(\sqrt{3}-1)}{4}."></div>
@@ -130,10 +156,11 @@
       </article>
 
       <article class="problem">
-        <h3>Задача 4</h3>
+        <h4 class="problem__name">Задача 2</h4>
         <p class="problem-text">Найдите максимальное значение функции <span class="math-inline" data-latex="f(x) = 3\sin x + 4\cos x"></span>.</p>
-        <div class="solution">
-          <h4>Решение</h4>
+        <button type="button" class="solution-toggle" id="btn-sol-ege-2" aria-expanded="false" aria-controls="sol-ege-2">Показать ответ</button>
+        <div class="solution" id="sol-ege-2" role="region" aria-labelledby="btn-sol-ege-2" hidden>
+          <h4 class="solution__heading">Решение</h4>
           <p>Пишем в виде синуса с сдвигом: <span class="math-inline" data-latex="f(x)=\sqrt{3^2+4^2}\sin(x+\varphi)=5\sin(x+\varphi)"></span>, где угол <span class="math-inline" data-latex="\varphi"></span> выбран из условий <span class="math-inline" data-latex="\cos\varphi=\frac{3}{5}"></span>, <span class="math-inline" data-latex="\sin\varphi=\frac{4}{5}"></span>.</p>
           <p>Максимум <span class="math-inline" data-latex="\sin"></span> равен <span class="math-inline" data-latex="1"></span>, значит <span class="math-inline" data-latex="\max f = 5"></span>.</p>
           <p><strong>Ответ:</strong> <span class="math-inline" data-latex="5"></span>.</p>
@@ -141,16 +168,61 @@
       </article>
 
       <article class="problem">
-        <h3>Задача 5</h3>
+        <h4 class="problem__name">Задача 3</h4>
+        <p class="problem-text">Вычислите <span class="math-inline" data-latex="\cos 75^\circ"></span> без калькулятора.</p>
+        <button type="button" class="solution-toggle" id="btn-sol-ege-3" aria-expanded="false" aria-controls="sol-ege-3">Показать ответ</button>
+        <div class="solution" id="sol-ege-3" role="region" aria-labelledby="btn-sol-ege-3" hidden>
+          <h4 class="solution__heading">Решение</h4>
+          <p>Представим <span class="math-inline" data-latex="75^\circ = 45^\circ + 30^\circ"></span> и применим формулу косинуса суммы:</p>
+          <div class="math-display" data-latex="\cos(45^\circ+30^\circ) = \cos 45^\circ\cos 30^\circ - \sin 45^\circ\sin 30^\circ"></div>
+          <div class="math-display" data-latex="= \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} - \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2} = \dfrac{\sqrt{2}(\sqrt{3}-1)}{4}."></div>
+          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{\sqrt{6}-\sqrt{2}}{4}"></span>.</p>
+        </div>
+      </article>
+      </div>
+
+      <div id="subpanel-uni" class="subpanel" role="tabpanel" aria-labelledby="subtab-uni" tabindex="0" hidden>
+      <article class="problem">
+        <h4 class="problem__name">Задача 1</h4>
         <p class="problem-text">Упростите <span class="math-inline" data-latex="\sin\alpha\cos\alpha\cos 2\alpha\cos 4\alpha"></span> (выразите через <span class="math-inline" data-latex="\sin 8\alpha"></span>).</p>
-        <div class="solution">
-          <h4>Решение</h4>
+        <button type="button" class="solution-toggle" id="btn-sol-uni-1" aria-expanded="false" aria-controls="sol-uni-1">Показать ответ</button>
+        <div class="solution" id="sol-uni-1" role="region" aria-labelledby="btn-sol-uni-1" hidden>
+          <h4 class="solution__heading">Решение</h4>
           <p>Домножим и разделим на <span class="math-inline" data-latex="8"></span>, используя <span class="math-inline" data-latex="\sin 2t = 2\sin t\cos t"></span> несколько раз:</p>
           <div class="math-display" data-latex="\sin\alpha\cos\alpha\cos 2\alpha\cos 4\alpha = \dfrac{2\sin\alpha\cos\alpha}{2}\cos 2\alpha\cos 4\alpha = \dfrac{\sin 2\alpha}{2}\cos 2\alpha\cos 4\alpha"></div>
           <div class="math-display" data-latex="= \dfrac{2\sin 2\alpha\cos 2\alpha}{4}\cos 4\alpha = \dfrac{\sin 4\alpha\cos 4\alpha}{4} = \dfrac{\sin 8\alpha}{8}."></div>
           <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{\sin 8\alpha}{8}"></span>.</p>
         </div>
       </article>
+
+      <article class="problem">
+        <h4 class="problem__name">Задача 2</h4>
+        <p class="problem-text">Упростите выражение <span class="math-inline" data-latex="\dfrac{\sin 5x + \sin 3x}{\cos 5x + \cos 3x}"></span> (при <span class="math-inline" data-latex="\cos 5x + \cos 3x \neq 0"></span>).</p>
+        <button type="button" class="solution-toggle" id="btn-sol-uni-2" aria-expanded="false" aria-controls="sol-uni-2">Показать ответ</button>
+        <div class="solution" id="sol-uni-2" role="region" aria-labelledby="btn-sol-uni-2" hidden>
+          <h4 class="solution__heading">Решение</h4>
+          <p>Преобразуем числитель и знаменатель по формулам суммы:</p>
+          <div class="math-display" data-latex="\sin 5x + \sin 3x = 2\sin 4x\cos x,\qquad \cos 5x + \cos 3x = 2\cos 4x\cos x"></div>
+          <p>При <span class="math-inline" data-latex="\cos x \neq 0"></span> сокращаем <span class="math-inline" data-latex="\cos x"></span>:</p>
+          <div class="math-display" data-latex="\dfrac{2\sin 4x\cos x}{2\cos 4x\cos x} = \dfrac{\sin 4x}{\cos 4x} = \operatorname{tg} 4x."></div>
+          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\operatorname{tg} 4x"></span> (при указанных ограничениях).</p>
+        </div>
+      </article>
+
+      <article class="problem">
+        <h4 class="problem__name">Задача 3</h4>
+        <p class="problem-text">Найдите значение <span class="math-inline" data-latex="\arcsin\dfrac{1}{2} + \arccos\dfrac{\sqrt{3}}{2}"></span> (в радианах).</p>
+        <button type="button" class="solution-toggle" id="btn-sol-uni-3" aria-expanded="false" aria-controls="sol-uni-3">Показать ответ</button>
+        <div class="solution" id="sol-uni-3" role="region" aria-labelledby="btn-sol-uni-3" hidden>
+          <h4 class="solution__heading">Решение</h4>
+          <p>Находим значения по определению:</p>
+          <div class="math-display" data-latex="\arcsin\dfrac{1}{2} = \dfrac{\pi}{6},\qquad \arccos\dfrac{\sqrt{3}}{2} = \dfrac{\pi}{6}."></div>
+          <p>Сумма:</p>
+          <div class="math-display" data-latex="\dfrac{\pi}{6} + \dfrac{\pi}{6} = \dfrac{\pi}{3}."></div>
+          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{\pi}{3}"></span>.</p>
+        </div>
+      </article>
+      </div>
     </section>
   </main>
 

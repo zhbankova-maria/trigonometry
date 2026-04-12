@@ -124,6 +124,66 @@ body {
   margin: 0.5rem 0;
 }
 
+.panel-lead {
+  margin: 0 0 1rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.subtab {
+  appearance: none;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #c4c9d4;
+  border-radius: 0.45rem;
+  background: #f9fafb;
+  color: #4b5563;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.subtab:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.subtab:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.subtab--active {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #047857;
+}
+
+.subtab--active:hover {
+  background: #d1fae5;
+  border-color: #059669;
+}
+
+.subpanel[hidden] {
+  display: none !important;
+}
+
+.subpanel .problem:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .math-inline {
   display: inline-block;
   vertical-align: middle;
@@ -168,19 +228,38 @@ body {
   border-top: 1px solid #e5e7eb;
 }
 
-.problem:first-of-type {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-}
 
-.problem h3 {
+.problem__name {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .problem-text {
   margin: 0 0 0.75rem;
+}
+
+.solution-toggle {
+  appearance: none;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border: 1px solid #16a34a;
+  border-radius: 0.45rem;
+  background: #fff;
+  color: #15803d;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.solution-toggle:hover {
+  background: #f0fdf4;
+}
+
+.solution-toggle:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 .solution {
@@ -188,10 +267,10 @@ body {
   border: 1px solid #bbf7d0;
   border-radius: 0.5rem;
   padding: 0.85rem 1rem 1rem;
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
 }
 
-.solution h4 {
+.solution__heading {
   margin: 0 0 0.5rem;
   font-size: 0.95rem;
   color: #166534;
@@ -219,6 +298,15 @@ body {
   }
 
   .tab {
+    width: 100%;
+    text-align: center;
+  }
+
+  .subtabs {
+    flex-direction: column;
+  }
+
+  .subtab {
     width: 100%;
     text-align: center;
   }
