@@ -1,236 +1,1958 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Тригонометрия — теория, формулы, задачи</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <h1>Тригонометрия</h1>
-    <p class="subtitle">Краткий справочник: теория, формулы и разобранные задачи</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Применение тригонометрических функций в решении задач</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Применение тригонометрических функций в решении задач</h1>
+      <p class="subtitle">
+        По материалам выпускной квалификационной работы студента ВГПУ Бойкова
+        Никиты.
+      </p>
+    </header>
 
-  <nav class="tabs" role="tablist" aria-label="Разделы">
-    <button type="button" class="tab tab--active" role="tab" id="tab-theory" aria-selected="true" aria-controls="panel-theory" data-panel="theory">Теория</button>
-    <button type="button" class="tab" role="tab" id="tab-formulas" aria-selected="false" aria-controls="panel-formulas" data-panel="formulas">Формулы</button>
-    <button type="button" class="tab" role="tab" id="tab-problems" aria-selected="false" aria-controls="panel-problems" data-panel="problems">Задачи</button>
-  </nav>
+    <nav class="tabs" role="tablist" aria-label="Разделы">
+      <button
+        type="button"
+        class="tab tab--active"
+        role="tab"
+        id="tab-theory"
+        aria-selected="true"
+        aria-controls="panel-theory"
+        data-panel="theory"
+      >
+        Теория
+      </button>
+      <button
+        type="button"
+        class="tab"
+        role="tab"
+        id="tab-formulas"
+        aria-selected="false"
+        aria-controls="panel-formulas"
+        data-panel="formulas"
+      >
+        Формулы
+      </button>
+      <button
+        type="button"
+        class="tab"
+        role="tab"
+        id="tab-problems"
+        aria-selected="false"
+        aria-controls="panel-problems"
+        data-panel="problems"
+      >
+        Задачи
+      </button>
+    </nav>
 
-  <main class="main">
-    <section id="panel-theory" class="panel panel--active" role="tabpanel" aria-labelledby="tab-theory" tabindex="0">
-      <h2>Основы</h2>
-
-      <h3>Угол и его измерение</h3>
-      <p>Угол можно задавать в <strong>градусах</strong> или <strong>радианах</strong>. Полный оборот — <span class="math-inline" data-latex="360^\circ"></span> или <span class="math-inline" data-latex="2\pi"></span> рад.</p>
-      <p>Перевод: <span class="math-display" data-latex="\alpha_{\text{рад}} = \dfrac{\pi}{180^\circ}\,\alpha_{\text{град}},\qquad \alpha_{\text{град}} = \dfrac{180^\circ}{\pi}\,\alpha_{\text{рад}}"></span></p>
-
-      <h3>Единичная окружность</h3>
-      <p>На окружности радиуса <span class="math-inline" data-latex="1"></span> с центром в начале координат точка, соответствующая углу <span class="math-inline" data-latex="\alpha"></span> (от положительного направления оси <span class="math-inline" data-latex="Ox"></span> против часовой стрелки), имеет координаты <span class="math-inline" data-latex="(\cos\alpha,\,\sin\alpha)"></span>.</p>
-
-      <h3>Определения sin, cos, tg, ctg</h3>
-      <p>Для произвольного угла <span class="math-inline" data-latex="\alpha"></span>:</p>
-      <div class="math-display" data-latex="\sin\alpha = y,\quad \cos\alpha = x,\quad \operatorname{tg}\alpha = \dfrac{\sin\alpha}{\cos\alpha},\quad \operatorname{ctg}\alpha = \dfrac{\cos\alpha}{\sin\alpha}"></div>
-      <p>где <span class="math-inline" data-latex="(x,y)"></span> — точка на единичной окружности. Для острого угла в прямоугольном треугольнике: <span class="math-inline" data-latex="\sin"></span> — отношение противолежащего катета к гипотенузе, <span class="math-inline" data-latex="\cos"></span> — прилежащего к гипотенузе.</p>
-
-      <h3>Знаки по четвертям</h3>
-      <table class="sign-table">
-        <thead>
-          <tr><th>Четверть</th><th><span class="math-inline" data-latex="\sin"></span></th><th><span class="math-inline" data-latex="\cos"></span></th><th><span class="math-inline" data-latex="\operatorname{tg}"></span></th><th><span class="math-inline" data-latex="\operatorname{ctg}"></span></th></tr>
-        </thead>
-        <tbody>
-          <tr><td>I</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>
-          <tr><td>II</td><td>+</td><td>−</td><td>−</td><td>−</td></tr>
-          <tr><td>III</td><td>−</td><td>−</td><td>+</td><td>+</td></tr>
-          <tr><td>IV</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>
-        </tbody>
-      </table>
-
-      <h3>Основное тригонометрическое тождество</h3>
-      <div class="math-display" data-latex="\sin^2\alpha + \cos^2\alpha = 1"></div>
-      <p>Следствия (при соответствующих ограничениях на знак): <span class="math-inline" data-latex="1+\operatorname{tg}^2\alpha = \dfrac{1}{\cos^2\alpha}"></span>, <span class="math-inline" data-latex="1+\operatorname{ctg}^2\alpha = \dfrac{1}{\sin^2\alpha}"></span>.</p>
-
-      <h3>Периодичность и чётность</h3>
-      <div class="math-display" data-latex="\sin(\alpha + 2\pi k)=\sin\alpha,\quad \cos(\alpha + 2\pi k)=\cos\alpha,\quad k\in\mathbb{Z}"></div>
-      <div class="math-display" data-latex="\sin(-\alpha)=-\sin\alpha,\quad \cos(-\alpha)=\cos\alpha,\quad \operatorname{tg}(-\alpha)=-\operatorname{tg}\alpha,\quad \operatorname{ctg}(-\alpha)=-\operatorname{ctg}\alpha"></div>
-    </section>
-
-    <section id="panel-formulas" class="panel" role="tabpanel" aria-labelledby="tab-formulas" tabindex="0" hidden>
-      <h2>Справочник формул</h2>
-
-      <h3>Сумма и разность углов</h3>
-      <div class="math-display" data-latex="\sin(\alpha\pm\beta) = \sin\alpha\cos\beta \pm \cos\alpha\sin\beta"></div>
-      <div class="math-display" data-latex="\cos(\alpha\pm\beta) = \cos\alpha\cos\beta \mp \sin\alpha\sin\beta"></div>
-      <div class="math-display" data-latex="\operatorname{tg}(\alpha\pm\beta) = \dfrac{\operatorname{tg}\alpha \pm \operatorname{tg}\beta}{1 \mp \operatorname{tg}\alpha\,\operatorname{tg}\beta}"></div>
-
-      <h3>Двойной угол</h3>
-      <div class="math-display" data-latex="\sin 2\alpha = 2\sin\alpha\cos\alpha"></div>
-      <div class="math-display" data-latex="\cos 2\alpha = \cos^2\alpha - \sin^2\alpha = 2\cos^2\alpha - 1 = 1 - 2\sin^2\alpha"></div>
-      <div class="math-display" data-latex="\operatorname{tg} 2\alpha = \dfrac{2\operatorname{tg}\alpha}{1-\operatorname{tg}^2\alpha}"></div>
-
-      <h3>Полуформулы (степени sin, cos через cos удвоенного угла)</h3>
-      <div class="math-display" data-latex="\sin^2\dfrac{\alpha}{2} = \dfrac{1-\cos\alpha}{2},\qquad \cos^2\dfrac{\alpha}{2} = \dfrac{1+\cos\alpha}{2}"></div>
-
-      <h3>Преобразование произведения в сумму</h3>
-      <div class="math-display" data-latex="\sin\alpha\cos\beta = \tfrac{1}{2}\bigl(\sin(\alpha+\beta)+\sin(\alpha-\beta)\bigr)"></div>
-      <div class="math-display" data-latex="\sin\alpha\sin\beta = \tfrac{1}{2}\bigl(\cos(\alpha-\beta)-\cos(\alpha+\beta)\bigr)"></div>
-      <div class="math-display" data-latex="\cos\alpha\cos\beta = \tfrac{1}{2}\bigl(\cos(\alpha+\beta)+\cos(\alpha-\beta)\bigr)"></div>
-
-      <h3>Сумма синусов и косинусов</h3>
-      <div class="math-display" data-latex="\sin\alpha + \sin\beta = 2\sin\dfrac{\alpha+\beta}{2}\cos\dfrac{\alpha-\beta}{2}"></div>
-      <div class="math-display" data-latex="\cos\alpha + \cos\beta = 2\cos\dfrac{\alpha+\beta}{2}\cos\dfrac{\alpha-\beta}{2}"></div>
-
-      <h3>Вспомогательный угол (линейная комбинация)</h3>
-      <p>Выражение <span class="math-inline" data-latex="a\sin x + b\cos x"></span> при <span class="math-inline" data-latex="a^2+b^2>0"></span> можно записать как</p>
-      <div class="math-display" data-latex="a\sin x + b\cos x = \sqrt{a^2+b^2}\,\sin(x+\varphi)"></div>
-      <p>где <span class="math-inline" data-latex="\cos\varphi = \dfrac{a}{\sqrt{a^2+b^2}}"></span>, <span class="math-inline" data-latex="\sin\varphi = \dfrac{b}{\sqrt{a^2+b^2}}"></span>.</p>
-    </section>
-
-    <section id="panel-problems" class="panel" role="tabpanel" aria-labelledby="tab-problems" tabindex="0" hidden>
-      <h2>Задачи с решениями</h2>
-      <p class="panel-lead">Выберите уровень сложности. В каждом разделе — три задачи. Нажмите «Показать ответ», чтобы увидеть решение.</p>
-
-      <div class="subtabs" role="tablist" aria-label="Уровень сложности задач">
-        <button type="button" class="subtab subtab--active" role="tab" id="subtab-oge" aria-selected="true" aria-controls="subpanel-oge" data-subpanel="oge">Уровень ОГЭ</button>
-        <button type="button" class="subtab" role="tab" id="subtab-ege" aria-selected="false" aria-controls="subpanel-ege" data-subpanel="ege">Уровень ЕГЭ</button>
-        <button type="button" class="subtab" role="tab" id="subtab-uni" aria-selected="false" aria-controls="subpanel-uni" data-subpanel="uni">Уровень вуза</button>
-      </div>
-
-      <div id="subpanel-oge" class="subpanel" role="tabpanel" aria-labelledby="subtab-oge" tabindex="0">
-      <article class="problem">
-        <h4 class="problem__name">Задача 1</h4>
-        <p class="problem-text">Упростите выражение <span class="math-inline" data-latex="\sin^4 x + \cos^4 x + 2\sin^2 x\cos^2 x"></span>.</p>
-        <button type="button" class="solution-toggle" id="btn-sol-oge-1" aria-expanded="false" aria-controls="sol-oge-1">Показать ответ</button>
-        <div class="solution" id="sol-oge-1" role="region" aria-labelledby="btn-sol-oge-1" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>Заметим, что <span class="math-inline" data-latex="2\sin^2 x\cos^2 x"></span> дополняет сумму квадратов до полного квадрата:</p>
-          <div class="math-display" data-latex="\sin^4 x + \cos^4 x + 2\sin^2 x\cos^2 x = (\sin^2 x + \cos^2 x)^2"></div>
-          <p>По основному тождеству <span class="math-inline" data-latex="\sin^2 x + \cos^2 x = 1"></span>, получаем</p>
-          <div class="math-display" data-latex="(\sin^2 x + \cos^2 x)^2 = 1^2 = 1."></div>
-          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="1"></span>.</p>
+    <main class="main">
+      <section
+        id="panel-theory"
+        class="panel panel--active"
+        role="tabpanel"
+        aria-labelledby="tab-theory"
+        tabindex="0"
+      >
+        <div
+          class="panel-header"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+          "
+        >
+          <h2 style="margin: 0">Основные теоретические положения</h2>
         </div>
-      </article>
 
-      <article class="problem">
-        <h4 class="problem__name">Задача 2</h4>
-        <p class="problem-text">Докажите тождество <span class="math-inline" data-latex="\dfrac{1-\cos 2\alpha}{\sin 2\alpha} = \operatorname{tg}\alpha"></span> (при <span class="math-inline" data-latex="\sin 2\alpha \neq 0"></span>).</p>
-        <button type="button" class="solution-toggle" id="btn-sol-oge-2" aria-expanded="false" aria-controls="sol-oge-2">Показать ответ</button>
-        <div class="solution" id="sol-oge-2" role="region" aria-labelledby="btn-sol-oge-2" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>Используем формулы двойного угла:</p>
-          <div class="math-display" data-latex="1 - \cos 2\alpha = 2\sin^2\alpha,\qquad \sin 2\alpha = 2\sin\alpha\cos\alpha"></div>
-          <p>Тогда</p>
-          <div class="math-display" data-latex="\dfrac{1-\cos 2\alpha}{\sin 2\alpha} = \dfrac{2\sin^2\alpha}{2\sin\alpha\cos\alpha} = \dfrac{\sin\alpha}{\cos\alpha} = \operatorname{tg}\alpha."></div>
-          <p><strong>Ответ:</strong> тождество верно при указанных ограничениях.</p>
+        <p class="panel-lead">
+          Используйте навигацию для быстрого перехода к нужному разделу.
+        </p>
+
+        <div class="theory-nav">
+          <a href="#theory-history" class="theory-nav-link">История</a>
+          <a href="#theory-basics" class="theory-nav-link">Основные понятия</a>
+          <a href="#theory-functions" class="theory-nav-link"
+            >Тригонометрические функции</a
+          >
+          <a href="#theory-properties" class="theory-nav-link"
+            >Характеристики функций</a
+          >
         </div>
-      </article>
 
-      <article class="problem">
-        <h4 class="problem__name">Задача 3</h4>
-        <p class="problem-text">Найдите <span class="math-inline" data-latex="\sin\alpha"></span>, если <span class="math-inline" data-latex="\cos\alpha = \dfrac{3}{5}"></span> и угол <span class="math-inline" data-latex="\alpha"></span> лежит в I четверти.</p>
-        <button type="button" class="solution-toggle" id="btn-sol-oge-3" aria-expanded="false" aria-controls="sol-oge-3">Показать ответ</button>
-        <div class="solution" id="sol-oge-3" role="region" aria-labelledby="btn-sol-oge-3" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>По основному тождеству <span class="math-inline" data-latex="\sin^2\alpha + \cos^2\alpha = 1"></span>:</p>
-          <div class="math-display" data-latex="\sin^2\alpha = 1 - \cos^2\alpha = 1 - \dfrac{9}{25} = \dfrac{16}{25}."></div>
-          <p>В I четверти <span class="math-inline" data-latex="\sin\alpha > 0"></span>, поэтому <span class="math-inline" data-latex="\sin\alpha = \dfrac{4}{5}"></span>.</p>
-          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{4}{5}"></span>.</p>
+        <div id="theory-container">
+          <div id="theory-history" class="theory-section">
+            <h3>История возникновения и развития тригонометрии</h3>
+            <div class="theory-section-content">
+              <p>
+                Тригонометрия как раздел математики возникла в связи с
+                практическими задачами астрономии, геодезии и навигации,
+                требующими измерения углов и расстояний. Первые элементы
+                тригонометрических знаний можно обнаружить в трудах учёных
+                Древнего Египта и Вавилона, где уже во II тысячелетии до н. э.
+                использовались приближённые методы вычисления углов и длин
+                сторон треугольников.
+              </p>
+              <p>
+                Значительный вклад в развитие тригонометрии был сделан в Древней
+                Греции. В III–II веках до н. э. греческие математики применяли
+                геометрические методы для решения астрономических задач. Одним
+                из основоположников тригонометрии считается
+                <strong>Гиппарх Никейский</strong> (около 190–120 гг. до н. э.),
+                который составил первые таблицы хорд, фактически являвшиеся
+                прообразом таблиц тригонометрических функций. В I–II веках н. э.
+                труды <strong>Клавдия Птолемея</strong> (около 100–170 гг.)
+                сыграли важную роль в дальнейшем развитии тригонометрии; в его
+                сочинении «Альмагест» были систематизированы методы решения
+                треугольников и приведены усовершенствованные таблицы хорд.
+              </p>
+              <p>
+                В средние века значительное развитие тригонометрия получила в
+                трудах учёных стран Востока. В IX–X веках математики и
+                астрономы, такие как <strong>Аль-Баттани</strong> (около 858–929
+                гг.), ввели в употребление понятия синуса и косинуса, заменив
+                ими понятие хорды. В этот же период были разработаны таблицы
+                синусов и усовершенствованы методы вычислений. В XIII веке
+                <strong>Насир ад-Дин ат-Туси</strong> (1201–1274 гг.) выделил
+                тригонометрию в самостоятельную область знаний и сформулировал
+                основные соотношения между тригонометрическими величинами.
+              </p>
+              <p>
+                В Европе тригонометрия получила дальнейшее развитие в эпоху
+                Возрождения. В XV–XVI веках <strong>Иоганн Мюллер</strong>,
+                известный как Региомонтан (1436–1476 гг.), обобщил и
+                систематизировал тригонометрические знания, представив
+                тригонометрию как самостоятельную математическую дисциплину. В
+                дальнейшем вклад в развитие теории тригонометрических функций
+                внесли такие учёные, как
+                <strong>Франсуа Виет</strong> (1540–1603 гг.) и
+                <strong>Леонард Эйлер</strong> (1707–1783 гг.), который ввёл
+                современную символику и рассматривал тригонометрические функции
+                как аналитические функции действительного аргумента.
+              </p>
+              <p>
+                Таким образом, развитие тригонометрии прошло путь от
+                практических геометрических приёмов к строгой теории
+                тригонометрических функций, что обусловило их широкое применение
+                в решении задач различного характера и уровня сложности.
+              </p>
+            </div>
+          </div>
+
+          <div id="theory-basics" class="theory-section">
+            <h3>Основные понятия тригонометрии</h3>
+            <div class="theory-section-content">
+              <p>
+                Основу тригонометрии составляют понятия угла, его измерения и
+                связанных с ним геометрических и функциональных представлений.
+                Эти понятия являются необходимыми для введения и последующего
+                изучения тригонометрических функций и их применения при решении
+                задач.
+              </p>
+              <p>
+                Одним из ключевых понятий тригонометрии является
+                <strong>угол</strong>. В элементарной геометрии угол
+                рассматривается как фигура, образованная двумя лучами,
+                исходящими из одной точки. В тригонометрии угол понимается более
+                широко — как величина, характеризующая поворот луча вокруг
+                начала координат. Такой подход позволяет рассматривать углы
+                любой величины, в том числе превышающие
+                <span class="math-inline" data-latex="360^\circ"></span>, а
+                также отрицательные углы. Угол называется
+                <strong>положительным</strong>, если он образован поворотом луча
+                против хода часовой стрелки, и <strong>отрицательным</strong>,
+                если он образован поворотом луча по ходу часовой стрелки.
+              </p>
+              <p>
+                Измерение углов может осуществляться в градусной и радианной
+                мерах. Если луч совершает полный оборот вокруг начала координат,
+                то
+                <span class="math-inline" data-latex="\frac{1}{360}"></span>
+                часть полного оборота называется <strong>градусом</strong>.
+                Градусная мера традиционно используется в школьном курсе
+                математики. В более строгих математических исследованиях и при
+                изучении высшей математики предпочтение отдаётся радианной мере.
+              </p>
+              <p>
+                Введение и градусной, и радианной меры основано на следующем
+                утверждении:
+              </p>
+              <p class="theory-statement">
+                <strong>Утверждение.</strong> Отношение длины дуги, на которую
+                данный центральный угол опирается, к радиусу окружности
+                определяется лишь только данным углом и не зависит от величины
+                радиуса.
+              </p>
+              <p>
+                Введём на плоскости прямоугольную систему координат
+                <span class="math-inline" data-latex="xOy"></span> и рассмотрим
+                <strong>единичную окружность</strong>, т.е. окружность с центром
+                в некоторой точке
+                <span class="math-inline" data-latex="O"></span> и с радиусом,
+                равным единице масштаба. Выберем на этой окружности некоторую
+                точку <span class="math-inline" data-latex="A(1;0)"></span>,
+                лежащую на этой окружности, называемую «началом отсчёта» (не
+                путать с началом координат). Направление обхода по окружности
+                против хода часовой стрелки будем называть
+                <strong>положительным</strong>, а по ходу —
+                <strong>отрицательным</strong> направлением обхода. Введённую
+                таким образом окружность называют
+                <strong>тригонометрической окружностью</strong>.
+              </p>
+              <p>
+                По аналогии с числовой прямой каждому числу
+                <span
+                  class="math-inline"
+                  data-latex="\alpha \in (0;2\pi)"
+                ></span>
+                поставим в соответствие точку
+                <span class="math-inline" data-latex="P_{\alpha}"></span> данной
+                единичной окружности такую, что длина дуги
+                <span class="math-inline" data-latex="AP_{\alpha}"></span> равна
+                <span class="math-inline" data-latex="\alpha"></span>, причем
+                дуга
+                <span class="math-inline" data-latex="AP_{\alpha}"></span>
+                откладывается от точки
+                <span class="math-inline" data-latex="A"></span> против часовой
+                стрелки. Числу
+                <span class="math-inline" data-latex="0"></span> и числу
+                <span class="math-inline" data-latex="2\pi"></span> поставим в
+                соответствие точку
+                <span class="math-inline" data-latex="A"></span>. Таким образом,
+                между точками единичной окружности и числами промежутка
+                <span class="math-inline" data-latex="[0;\ 2\pi)"></span>
+                установлено взаимно однозначное соответствие.
+              </p>
+              <p>
+                Число
+                <span class="math-inline" data-latex="\alpha"></span> называется
+                <strong>радианной мерой</strong> дуги
+                <span class="math-inline" data-latex="AP_{\alpha}"></span> и,
+                соответственно, угла
+                <span
+                  class="math-inline"
+                  data-latex="\angle AOP_{\alpha}"
+                ></span
+                >. Из формулы для вычисления длины дуги окружности следует
+                формула, связывающая радианную и градусную меры угла:
+              </p>
+              <div
+                class="math-display"
+                data-latex="\alpha = \frac{\pi}{180^\circ} \cdot \beta"
+              ></div>
+              <p>
+                где <span class="math-inline" data-latex="\alpha"></span> —
+                длина дуги в радианах,
+                <span class="math-inline" data-latex="\beta"></span> — градусная
+                мера.
+              </p>
+              <p>
+                О точке
+                <span class="math-inline" data-latex="P_{\alpha}"></span>
+                говорят, что она получается из точки
+                <span class="math-inline" data-latex="A"></span> поворотом на
+                <span class="math-inline" data-latex="|\alpha|"></span> радиан
+                против часовой стрелки, если
+                <span class="math-inline" data-latex="\alpha > 0"></span>, и по
+                часовой стрелке, если
+                <span class="math-inline" data-latex="\alpha < 0"></span>.
+              </p>
+              <p>
+                Таким образом, основные понятия тригонометрии — угол, способы
+                его измерения, единичная окружность и функциональная
+                интерпретация — образуют теоретическую базу, необходимую для
+                изучения тригонометрических функций и их последующего применения
+                при решении задач.
+              </p>
+            </div>
+          </div>
+
+          <div id="theory-functions" class="theory-section">
+            <h3>Тригонометрические функции</h3>
+            <div class="theory-section-content">
+              <p>
+                Рассмотрим прямоугольный треугольник
+                <span class="math-inline" data-latex="ABC"></span> с катетами
+                <span class="math-inline" data-latex="AC = a"></span>,
+                <span class="math-inline" data-latex="BC = b"></span> и
+                гипотенузой
+                <span class="math-inline" data-latex="AB = c"></span>.
+              </p>
+              <p>
+                Если в прямоугольном треугольнике отмечен острый угол, то катет,
+                лежащий напротив этого угла, называется
+                <strong>противолежащим катетом</strong>, а катет, являющийся
+                одной из сторон угла, называют
+                <strong>прилежащим катетом</strong>.
+              </p>
+              <p>
+                <strong
+                  >Определения тригонометрических функций острого угла:</strong
+                >
+              </p>
+              <ul style="margin-left: 20px">
+                <li>
+                  <strong>Синус</strong> — отношение противолежащего катета к
+                  гипотенузе:
+                  <span
+                    class="math-inline"
+                    data-latex="\sin\alpha = \frac{a}{c}"
+                  ></span>
+                </li>
+                <li>
+                  <strong>Косинус</strong> — отношение прилежащего катета к
+                  гипотенузе:
+                  <span
+                    class="math-inline"
+                    data-latex="\cos\alpha = \frac{b}{c}"
+                  ></span>
+                </li>
+                <li>
+                  <strong>Тангенс</strong> — отношение противолежащего катета к
+                  прилежащему:
+                  <span
+                    class="math-inline"
+                    data-latex="\operatorname{tg}\alpha = \frac{a}{b}"
+                  ></span>
+                </li>
+                <li>
+                  <strong>Котангенс</strong> — отношение прилежащего катета к
+                  противолежащему:
+                  <span
+                    class="math-inline"
+                    data-latex="\operatorname{ctg}\alpha = \frac{b}{a}"
+                  ></span>
+                </li>
+              </ul>
+              <p>Из определений следуют соотношения:</p>
+              <div
+                class="math-display"
+                data-latex="\operatorname{tg}\alpha = \frac{\sin\alpha}{\cos\alpha},\quad \operatorname{ctg}\alpha = \frac{\cos\alpha}{\sin\alpha}"
+              ></div>
+              <div
+                class="math-display"
+                data-latex="\operatorname{tg}\alpha \cdot \operatorname{ctg}\alpha = 1"
+              ></div>
+
+              <p><strong>Основное тригонометрическое тождество:</strong></p>
+              <div
+                class="math-display"
+                data-latex="\sin^2\alpha + \cos^2\alpha = 1"
+              ></div>
+
+              <p><strong>Следствия из основного тождества:</strong></p>
+              <div
+                class="math-display"
+                data-latex="1 + \operatorname{tg}^2\alpha = \frac{1}{\cos^2\alpha},\quad 1 + \operatorname{ctg}^2\alpha = \frac{1}{\sin^2\alpha}"
+              ></div>
+
+              <p><strong>Секанс и косеканс:</strong></p>
+              <ul style="margin-left: 20px">
+                <li>
+                  <strong>Секанс</strong> — отношение гипотенузы к прилежащему
+                  катету:
+                  <span
+                    class="math-inline"
+                    data-latex="\sec\alpha = \frac{c}{b} = \frac{1}{\cos\alpha}"
+                  ></span>
+                </li>
+                <li>
+                  <strong>Косеканс</strong> — отношение гипотенузы к
+                  противолежащему катету:
+                  <span
+                    class="math-inline"
+                    data-latex="\cosec\alpha = \frac{c}{a} = \frac{1}{\sin\alpha}"
+                  ></span>
+                </li>
+              </ul>
+
+              <p>
+                <strong>Тригонометрические функции произвольного угла:</strong>
+              </p>
+              <p>
+                <strong>Синусом</strong> произвольного угла (числа)
+                <span class="math-inline" data-latex="\alpha"></span> называется
+                ордината точки
+                <span class="math-inline" data-latex="P_{\alpha}"></span>
+                единичной окружности:
+                <span
+                  class="math-inline"
+                  data-latex="\sin\alpha = y_{\alpha}"
+                ></span
+                >.
+              </p>
+              <p>
+                <strong>Косинусом</strong> произвольного угла (числа)
+                <span class="math-inline" data-latex="\alpha"></span> называется
+                абсцисса точки
+                <span class="math-inline" data-latex="P_{\alpha}"></span>
+                единичной окружности:
+                <span
+                  class="math-inline"
+                  data-latex="\cos\alpha = x_{\alpha}"
+                ></span
+                >.
+              </p>
+              <p>
+                <strong>Тангенсом</strong> угла
+                <span class="math-inline" data-latex="\alpha"></span> называется
+                координата на оси тангенсов точки пересечения оси тангенсов и
+                прямой
+                <span class="math-inline" data-latex="OP_{\alpha}"></span>.
+              </p>
+              <p>
+                <strong>Котангенсом</strong> угла
+                <span class="math-inline" data-latex="\alpha"></span> называется
+                координата на оси котангенсов точки пересечения оси котангенсов
+                и прямой
+                <span class="math-inline" data-latex="OP_{\alpha}"></span>.
+              </p>
+            </div>
+          </div>
+
+          <div id="theory-properties" class="theory-section">
+            <h3>Характеристики тригонометрических функций</h3>
+            <div class="theory-section-content theory-properties">
+              <h4 class="formula-subheading">Координатные четверти</h4>
+              <ul style="margin-left: 20px">
+                <li>
+                  <strong>I четверть:</strong>
+                  <span
+                    class="math-inline"
+                    data-latex="0^\circ < \alpha < 90^\circ"
+                  ></span>
+                </li>
+                <li>
+                  <strong>II четверть:</strong>
+                  <span
+                    class="math-inline"
+                    data-latex="90^\circ < \alpha < 180^\circ"
+                  ></span>
+                </li>
+                <li>
+                  <strong>III четверть:</strong>
+                  <span
+                    class="math-inline"
+                    data-latex="180^\circ < \alpha < 270^\circ"
+                  ></span>
+                </li>
+                <li>
+                  <strong>IV четверть:</strong>
+                  <span
+                    class="math-inline"
+                    data-latex="270^\circ < \alpha < 360^\circ"
+                  ></span>
+                </li>
+              </ul>
+
+              <h4 class="formula-subheading">
+                Знаки тригонометрических функций по четвертям
+              </h4>
+              <table class="sign-table" style="align-self: center">
+                <thead>
+                  <tr>
+                    <th>Четверть</th>
+                    <th><span class="math-inline" data-latex="\sin"></span></th>
+                    <th><span class="math-inline" data-latex="\cos"></span></th>
+                    <th>
+                      <span
+                        class="math-inline"
+                        data-latex="\operatorname{tg}"
+                      ></span>
+                    </th>
+                    <th>
+                      <span
+                        class="math-inline"
+                        data-latex="\operatorname{ctg}"
+                      ></span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>I</td>
+                    <td>+</td>
+                    <td>+</td>
+                    <td>+</td>
+                    <td>+</td>
+                  </tr>
+                  <tr>
+                    <td>II</td>
+                    <td>+</td>
+                    <td>−</td>
+                    <td>−</td>
+                    <td>−</td>
+                  </tr>
+                  <tr>
+                    <td>III</td>
+                    <td>−</td>
+                    <td>−</td>
+                    <td>+</td>
+                    <td>+</td>
+                  </tr>
+                  <tr>
+                    <td>IV</td>
+                    <td>−</td>
+                    <td>+</td>
+                    <td>−</td>
+                    <td>−</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4 class="formula-subheading">Чётность и нечётность</h4>
+              <div
+                class="math-display"
+                data-latex="\sin(-\alpha) = -\sin\alpha,\quad \cos(-\alpha) = \cos\alpha"
+              ></div>
+              <div
+                class="math-display"
+                data-latex="\operatorname{tg}(-\alpha) = -\operatorname{tg}\alpha,\quad \operatorname{ctg}(-\alpha) = -\operatorname{ctg}\alpha"
+              ></div>
+              <div
+                class="math-display"
+                data-latex="\sec(-\alpha) = \sec\alpha,\quad \cosec(-\alpha) = -\cosec\alpha"
+              ></div>
+
+              <h4 class="formula-subheading">Периодичность</h4>
+              <p>
+                Функция
+                <span class="math-inline" data-latex="f(x)"></span> называется
+                периодической, если существует число
+                <span class="math-inline" data-latex="l > 0"></span> такое, что
+                <span class="math-inline" data-latex="f(x + l) = f(x)"></span>
+                для всех <span class="math-inline" data-latex="x"></span> из
+                области определения.
+              </p>
+              <div
+                class="math-display"
+                data-latex="\sin(t + 2\pi n) = \sin t,\quad \cos(t + 2\pi n) = \cos t"
+              ></div>
+              <div
+                class="math-display"
+                data-latex="\operatorname{tg}(t + \pi n) = \operatorname{tg}t,\quad \operatorname{ctg}(t + \pi n) = \operatorname{ctg}t"
+              ></div>
+              <p>Наименьший положительный период:</p>
+              <ul style="margin-left: 20px">
+                <li>
+                  для <span class="math-inline" data-latex="\sin"></span>,
+                  <span class="math-inline" data-latex="\cos"></span>,
+                  <span class="math-inline" data-latex="\sec"></span>,
+                  <span class="math-inline" data-latex="\cosec"></span>:
+                  <span class="math-inline" data-latex="T = 2\pi"></span>
+                </li>
+                <li>
+                  для
+                  <span
+                    class="math-inline"
+                    data-latex="\operatorname{tg}"
+                  ></span
+                  >,
+                  <span
+                    class="math-inline"
+                    data-latex="\operatorname{ctg}"
+                  ></span
+                  >: <span class="math-inline" data-latex="T = \pi"></span>
+                </li>
+              </ul>
+
+              <h4 class="formula-subheading">
+                Свойства и графики основных функций
+              </h4>
+
+              <p>
+                <strong
+                  ><span class="math-inline" data-latex="y = \sin x"></span
+                ></strong>
+              </p>
+              <ul style="margin-left: 20px">
+                <li>
+                  Область определения:
+                  <span
+                    class="math-inline"
+                    data-latex="D(y) = \mathbb{R}"
+                  ></span>
+                </li>
+                <li>
+                  Область значений:
+                  <span class="math-inline" data-latex="E(y) = [-1; 1]"></span>
+                </li>
+                <li>
+                  Функция нечётная, периодическая с периодом
+                  <span class="math-inline" data-latex="T = 2\pi"></span>
+                </li>
+                <li>
+                  Возрастает на
+                  <span
+                    class="math-inline"
+                    data-latex="[-\frac{\pi}{2} + 2\pi n; \frac{\pi}{2} + 2\pi n]"
+                  ></span>
+                </li>
+                <li>
+                  Убывает на
+                  <span
+                    class="math-inline"
+                    data-latex="[\frac{\pi}{2} + 2\pi n; \frac{3\pi}{2} + 2\pi n]"
+                  ></span>
+                </li>
+                <li>
+                  Максимум: <span class="math-inline" data-latex="1"></span> при
+                  <span
+                    class="math-inline"
+                    data-latex="x = \frac{\pi}{2} + 2\pi n"
+                  ></span>
+                </li>
+                <li>
+                  Минимум: <span class="math-inline" data-latex="-1"></span> при
+                  <span
+                    class="math-inline"
+                    data-latex="x = -\frac{\pi}{2} + 2\pi n"
+                  ></span>
+                </li>
+                <li>
+                  Производная:
+                  <span class="math-inline" data-latex="y' = \cos x"></span>
+                </li>
+              </ul>
+
+              <p>
+                <strong
+                  ><span class="math-inline" data-latex="y = \cos x"></span
+                ></strong>
+              </p>
+              <ul style="margin-left: 20px">
+                <li>
+                  Область определения:
+                  <span
+                    class="math-inline"
+                    data-latex="D(y) = \mathbb{R}"
+                  ></span>
+                </li>
+                <li>
+                  Область значений:
+                  <span class="math-inline" data-latex="E(y) = [-1; 1]"></span>
+                </li>
+                <li>
+                  Функция чётная, периодическая с периодом
+                  <span class="math-inline" data-latex="T = 2\pi"></span>
+                </li>
+                <li>
+                  Возрастает на
+                  <span
+                    class="math-inline"
+                    data-latex="[-\pi + 2\pi n; 2\pi n]"
+                  ></span>
+                </li>
+                <li>
+                  Убывает на
+                  <span
+                    class="math-inline"
+                    data-latex="[2\pi n; \pi + 2\pi n]"
+                  ></span>
+                </li>
+                <li>
+                  Максимум: <span class="math-inline" data-latex="1"></span> при
+                  <span class="math-inline" data-latex="x = 2\pi n"></span>
+                </li>
+                <li>
+                  Минимум: <span class="math-inline" data-latex="-1"></span> при
+                  <span
+                    class="math-inline"
+                    data-latex="x = \pi + 2\pi n"
+                  ></span>
+                </li>
+                <li>
+                  Производная:
+                  <span class="math-inline" data-latex="y' = -\sin x"></span>
+                </li>
+              </ul>
+
+              <p>
+                <strong
+                  ><span
+                    class="math-inline"
+                    data-latex="y = \operatorname{tg} x"
+                  ></span
+                ></strong>
+              </p>
+              <ul style="margin-left: 20px">
+                <li>
+                  Область определения:
+                  <span
+                    class="math-inline"
+                    data-latex="x \neq \frac{\pi}{2} + \pi n"
+                  ></span>
+                </li>
+                <li>
+                  Область значений:
+                  <span
+                    class="math-inline"
+                    data-latex="E(y) = \mathbb{R}"
+                  ></span>
+                </li>
+                <li>
+                  Функция нечётная, периодическая с периодом
+                  <span class="math-inline" data-latex="T = \pi"></span>
+                </li>
+                <li>Возрастает на всей области определения</li>
+                <li>Экстремумов нет</li>
+                <li>
+                  Производная:
+                  <span
+                    class="math-inline"
+                    data-latex="y' = \frac{1}{\cos^2 x}"
+                  ></span>
+                </li>
+              </ul>
+
+              <p>
+                <strong
+                  ><span
+                    class="math-inline"
+                    data-latex="y = \operatorname{ctg} x"
+                  ></span
+                ></strong>
+              </p>
+              <ul style="margin-left: 20px">
+                <li>
+                  Область определения:
+                  <span class="math-inline" data-latex="x \neq \pi n"></span>
+                </li>
+                <li>
+                  Область значений:
+                  <span
+                    class="math-inline"
+                    data-latex="E(y) = \mathbb{R}"
+                  ></span>
+                </li>
+                <li>
+                  Функция нечётная, периодическая с периодом
+                  <span class="math-inline" data-latex="T = \pi"></span>
+                </li>
+                <li>Убывает на всей области определения</li>
+                <li>Экстремумов нет</li>
+                <li>
+                  Производная:
+                  <span
+                    class="math-inline"
+                    data-latex="y' = -\frac{1}{\sin^2 x}"
+                  ></span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </article>
-      </div>
+      </section>
 
-      <div id="subpanel-ege" class="subpanel" role="tabpanel" aria-labelledby="subtab-ege" tabindex="0" hidden>
-      <article class="problem">
-        <h4 class="problem__name">Задача 1</h4>
-        <p class="problem-text">Вычислите <span class="math-inline" data-latex="\sin 15^\circ"></span> без калькулятора.</p>
-        <button type="button" class="solution-toggle" id="btn-sol-ege-1" aria-expanded="false" aria-controls="sol-ege-1">Показать ответ</button>
-        <div class="solution" id="sol-ege-1" role="region" aria-labelledby="btn-sol-ege-1" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>Представим <span class="math-inline" data-latex="15^\circ = 45^\circ - 30^\circ"></span> и применим формулу синуса разности:</p>
-          <div class="math-display" data-latex="\sin(45^\circ-30^\circ) = \sin 45^\circ\cos 30^\circ - \cos 45^\circ\sin 30^\circ"></div>
-          <div class="math-display" data-latex="= \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} - \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2} = \dfrac{\sqrt{2}(\sqrt{3}-1)}{4}."></div>
-          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{\sqrt{6}-\sqrt{2}}{4}"></span>.</p>
+      <section
+        id="panel-formulas"
+        class="panel"
+        role="tabpanel"
+        aria-labelledby="tab-formulas"
+        tabindex="0"
+        hidden
+      >
+        <div
+          class="panel-header"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+          "
+        >
+          <h2 style="margin: 0">Полный справочник формул тригонометрии</h2>
+          <button
+            type="button"
+            class="download-cheatsheet"
+            id="download-cheatsheet-btn"
+          >
+            Скачать в PDF
+          </button>
         </div>
-      </article>
 
-      <article class="problem">
-        <h4 class="problem__name">Задача 2</h4>
-        <p class="problem-text">Найдите максимальное значение функции <span class="math-inline" data-latex="f(x) = 3\sin x + 4\cos x"></span>.</p>
-        <button type="button" class="solution-toggle" id="btn-sol-ege-2" aria-expanded="false" aria-controls="sol-ege-2">Показать ответ</button>
-        <div class="solution" id="sol-ege-2" role="region" aria-labelledby="btn-sol-ege-2" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>Пишем в виде синуса с сдвигом: <span class="math-inline" data-latex="f(x)=\sqrt{3^2+4^2}\sin(x+\varphi)=5\sin(x+\varphi)"></span>, где угол <span class="math-inline" data-latex="\varphi"></span> выбран из условий <span class="math-inline" data-latex="\cos\varphi=\frac{3}{5}"></span>, <span class="math-inline" data-latex="\sin\varphi=\frac{4}{5}"></span>.</p>
-          <p>Максимум <span class="math-inline" data-latex="\sin"></span> равен <span class="math-inline" data-latex="1"></span>, значит <span class="math-inline" data-latex="\max f = 5"></span>.</p>
-          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="5"></span>.</p>
+        <p class="panel-lead">
+          Используйте навигацию для быстрого перехода к нужному разделу.
+        </p>
+
+        <div class="formula-nav">
+          <a href="#formula-group-basic" class="formula-nav-link"
+            >Основные тождества</a
+          >
+          <a href="#formula-group-reduction" class="formula-nav-link"
+            >Формулы приведения</a
+          >
+          <a href="#formula-group-sum" class="formula-nav-link"
+            >Сумма и разность</a
+          >
+          <a href="#formula-group-double" class="formula-nav-link"
+            >Двойной угол</a
+          >
+          <a href="#formula-group-triple" class="formula-nav-link"
+            >Тройной угол</a
+          >
+          <a href="#formula-group-half" class="formula-nav-link"
+            >Половинный угол</a
+          >
+          <a href="#formula-group-prodsum" class="formula-nav-link"
+            >Произведение ↔ Сумма</a
+          >
+          <a href="#formula-group-aux" class="formula-nav-link"
+            >Вспомогательный угол</a
+          >
+          <a href="#formula-group-universal" class="formula-nav-link"
+            >Универсальная подстановка</a
+          >
+          <a href="#formula-group-inverse" class="formula-nav-link"
+            >Обратные функции</a
+          >
+          <a href="#formula-group-derivatives" class="formula-nav-link"
+            >Производные</a
+          >
+          <a href="#formula-group-values" class="formula-nav-link"
+            >Табличные значения</a
+          >
         </div>
-      </article>
 
-      <article class="problem">
-        <h4 class="problem__name">Задача 3</h4>
-        <p class="problem-text">Вычислите <span class="math-inline" data-latex="\cos 75^\circ"></span> без калькулятора.</p>
-        <button type="button" class="solution-toggle" id="btn-sol-ege-3" aria-expanded="false" aria-controls="sol-ege-3">Показать ответ</button>
-        <div class="solution" id="sol-ege-3" role="region" aria-labelledby="btn-sol-ege-3" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>Представим <span class="math-inline" data-latex="75^\circ = 45^\circ + 30^\circ"></span> и применим формулу косинуса суммы:</p>
-          <div class="math-display" data-latex="\cos(45^\circ+30^\circ) = \cos 45^\circ\cos 30^\circ - \sin 45^\circ\sin 30^\circ"></div>
-          <div class="math-display" data-latex="= \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} - \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2} = \dfrac{\sqrt{2}(\sqrt{3}-1)}{4}."></div>
-          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{\sqrt{6}-\sqrt{2}}{4}"></span>.</p>
+        <div id="formula-groups-container">
+          <div id="formula-group-basic" class="formula-group">
+            <h3>📐 Основные тригонометрические тождества</h3>
+            <div class="formula-grid formula-grid-wide">
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin^2\alpha + \cos^2\alpha = 1"
+                ></div>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px">
+                  Основное тригонометрическое тождество
+                </p>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}\alpha = \frac{\sin\alpha}{\cos\alpha}"
+                ></div>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px">
+                  Определение тангенса
+                </p>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}\alpha = \frac{\cos\alpha}{\sin\alpha}"
+                ></div>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px">
+                  Определение котангенса
+                </p>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}\alpha \cdot \operatorname{ctg}\alpha = 1"
+                ></div>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px">
+                  Связь тангенса и котангенса
+                </p>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="1 + \operatorname{tg}^2\alpha = \frac{1}{\cos^2\alpha}"
+                ></div>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px">
+                  Следствие из основного тождества
+                </p>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="1 + \operatorname{ctg}^2\alpha = \frac{1}{\sin^2\alpha}"
+                ></div>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px">
+                  Следствие из основного тождества
+                </p>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sec\alpha = \frac{1}{\cos\alpha}"
+                ></div>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px">
+                  Определение секанса
+                </p>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cosec\alpha = \frac{1}{\sin\alpha}"
+                ></div>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px">
+                  Определение косеканса
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-reduction" class="formula-group">
+            <h3>🔄 Формулы приведения</h3>
+            <p style="margin-bottom: 15px">
+              <strong>Мнемоническое правило:</strong> Если аргумент содержит
+              <span class="math-inline" data-latex="\frac{\pi}{2}"></span> или
+              <span class="math-inline" data-latex="\frac{3\pi}{2}"></span> —
+              функция меняется (sin ↔ cos, tg ↔ ctg). Если
+              <span class="math-inline" data-latex="\pi"></span> или
+              <span class="math-inline" data-latex="2\pi"></span> — функция не
+              меняется. Знак определяется по знаку исходной функции в
+              соответствующей четверти.
+            </p>
+            <div class="formula-grid formula-grid-wide">
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin\left(\frac{\pi}{2} - \alpha\right) = \cos\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\sin\left(\frac{\pi}{2} + \alpha\right) = \cos\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos\left(\frac{\pi}{2} - \alpha\right) = \sin\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\cos\left(\frac{\pi}{2} + \alpha\right) = -\sin\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin(\pi - \alpha) = \sin\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\sin(\pi + \alpha) = -\sin\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos(\pi - \alpha) = -\cos\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\cos(\pi + \alpha) = -\cos\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}\left(\frac{\pi}{2} - \alpha\right) = \operatorname{ctg}\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}\left(\frac{\pi}{2} + \alpha\right) = -\operatorname{ctg}\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}\left(\frac{\pi}{2} - \alpha\right) = \operatorname{tg}\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}\left(\frac{\pi}{2} + \alpha\right) = -\operatorname{tg}\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin\left(\frac{3\pi}{2} - \alpha\right) = -\cos\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\sin\left(\frac{3\pi}{2} + \alpha\right) = -\cos\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos\left(\frac{3\pi}{2} - \alpha\right) = -\sin\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\cos\left(\frac{3\pi}{2} + \alpha\right) = \sin\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin(2\pi - \alpha) = -\sin\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\sin(2\pi + \alpha) = \sin\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos(2\pi - \alpha) = \cos\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\cos(2\pi + \alpha) = \cos\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}(\pi - \alpha) = -\operatorname{tg}\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}(\pi + \alpha) = \operatorname{tg}\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}(\pi - \alpha) = -\operatorname{ctg}\alpha"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}(\pi + \alpha) = \operatorname{ctg}\alpha"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-sum" class="formula-group">
+            <h3>➕ Формулы суммы и разности углов</h3>
+            <div
+              class="formula-grid formula-grid-wide"
+              style="font-size: 0.8rem"
+            >
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin(\alpha + \beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin(\alpha - \beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos(\alpha - \beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}(\alpha + \beta) = \frac{\operatorname{tg}\alpha + \operatorname{tg}\beta}{1 - \operatorname{tg}\alpha\,\operatorname{tg}\beta}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}(\alpha - \beta) = \frac{\operatorname{tg}\alpha - \operatorname{tg}\beta}{1 + \operatorname{tg}\alpha\,\operatorname{tg}\beta}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}(\alpha + \beta) = \frac{\operatorname{ctg}\alpha\,\operatorname{ctg}\beta - 1}{\operatorname{ctg}\beta + \operatorname{ctg}\alpha}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}(\alpha - \beta) = \frac{\operatorname{ctg}\alpha\,\operatorname{ctg}\beta + 1}{\operatorname{ctg}\beta - \operatorname{ctg}\alpha}"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-double" class="formula-group">
+            <h3>✖️ Формулы двойного угла</h3>
+            <div class="formula-grid formula-grid-wide">
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin 2\alpha = 2\sin\alpha\cos\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos 2\alpha = \cos^2\alpha - \sin^2\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos 2\alpha = 2\cos^2\alpha - 1"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos 2\alpha = 1 - 2\sin^2\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg} 2\alpha = \frac{2\operatorname{tg}\alpha}{1 - \operatorname{tg}^2\alpha}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg} 2\alpha = \frac{\operatorname{ctg}^2\alpha - 1}{2\operatorname{ctg}\alpha}"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-triple" class="formula-group">
+            <h3>3️⃣ Формулы тройного угла</h3>
+            <div class="formula-grid formula-grid-wide">
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin 3\alpha = 3\sin\alpha - 4\sin^3\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos 3\alpha = 4\cos^3\alpha - 3\cos\alpha"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg} 3\alpha = \frac{3\operatorname{tg}\alpha - \operatorname{tg}^3\alpha}{1 - 3\operatorname{tg}^2\alpha}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg} 3\alpha = \frac{3\operatorname{ctg}\alpha - \operatorname{ctg}^3\alpha}{1 - 3\operatorname{ctg}^2\alpha}"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-half" class="formula-group">
+            <h3>½ Формулы половинного угла</h3>
+            <div class="formula-grid formula-grid-wide">
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{1 + \cos\alpha}}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}\frac{\alpha}{2} = \frac{\sin\alpha}{1 + \cos\alpha} = \frac{1 - \cos\alpha}{\sin\alpha}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{1 - \cos\alpha}}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}\frac{\alpha}{2} = \frac{\sin\alpha}{1 - \cos\alpha} = \frac{1 + \cos\alpha}{\sin\alpha}"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-prodsum" class="formula-group">
+            <h3>🔄 Преобразование произведения в сумму и обратно</h3>
+
+            <h4 class="formula-subheading">Произведение → Сумма</h4>
+            <div
+              class="formula-grid formula-grid-wide"
+              style="font-size: 0.8rem"
+            >
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin\alpha\cos\beta = \frac{1}{2}\bigl[\sin(\alpha+\beta) + \sin(\alpha-\beta)\bigr]"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos\alpha\sin\beta = \frac{1}{2}\bigl[\sin(\alpha+\beta) - \sin(\alpha-\beta)\bigr]"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos\alpha\cos\beta = \frac{1}{2}\bigl[\cos(\alpha+\beta) + \cos(\alpha-\beta)\bigr]"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin\alpha\sin\beta = \frac{1}{2}\bigl[\cos(\alpha-\beta) - \cos(\alpha+\beta)\bigr]"
+                ></div>
+              </div>
+            </div>
+
+            <h4 class="formula-subheading">Сумма → Произведение</h4>
+            <div
+              class="formula-grid formula-grid-wide"
+              style="font-size: 0.8rem"
+            >
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin\alpha + \sin\beta = 2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin\alpha - \sin\beta = 2\sin\frac{\alpha-\beta}{2}\cos\frac{\alpha+\beta}{2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos\alpha + \cos\beta = 2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos\alpha - \cos\beta = -2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg}\alpha \pm \operatorname{tg}\beta = \frac{\sin(\alpha \pm \beta)}{\cos\alpha\cos\beta}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg}\alpha \pm \operatorname{ctg}\beta = \frac{\sin(\beta \pm \alpha)}{\sin\alpha\sin\beta}"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-aux" class="formula-group">
+            <h3>📐 Метод вспомогательного аргумента</h3>
+            <div
+              class="formula-grid formula-grid-wide"
+              style="font-size: 0.8rem"
+            >
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="a\sin x + b\cos x = \sqrt{a^2 + b^2}\,\sin(x + \varphi)"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\cos\varphi = \frac{a}{\sqrt{a^2 + b^2}},\quad \sin\varphi = \frac{b}{\sqrt{a^2 + b^2}}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="a\sin x + b\cos x = \sqrt{a^2 + b^2}\,\cos(x - \psi)"
+                ></div>
+                <div
+                  class="math-display"
+                  data-latex="\sin\psi = \frac{a}{\sqrt{a^2 + b^2}},\quad \cos\psi = \frac{b}{\sqrt{a^2 + b^2}}"
+                ></div>
+              </div>
+              <p style="margin-top: 10px; color: #555">
+                Здесь <span class="math-inline" data-latex="\varphi"></span> и
+                <span class="math-inline" data-latex="\psi"></span> —
+                вспомогательные углы.
+              </p>
+            </div>
+          </div>
+
+          <div id="formula-group-universal" class="formula-group">
+            <h3>🔄 Универсальная тригонометрическая подстановка</h3>
+            <p style="margin-bottom: 15px">
+              Подстановка
+              <span
+                class="math-inline"
+                data-latex="t = \operatorname{tg}\frac{x}{2}"
+              ></span>
+              позволяет выразить все тригонометрические функции через
+              <span class="math-inline" data-latex="t"></span> рационально.
+            </p>
+            <div class="formula-grid formula-grid-wide">
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin x = \frac{2t}{1 + t^2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos x = \frac{1 - t^2}{1 + t^2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{tg} x = \frac{2t}{1 - t^2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\operatorname{ctg} x = \frac{1 - t^2}{2t}"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-inverse" class="formula-group">
+            <h3>↩️ Обратные тригонометрические функции</h3>
+            <div class="formula-grid formula-grid-wide">
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\arcsin(-x) = -\arcsin x"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\arccos(-x) = \pi - \arccos x"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\arctg(-x) = -\arctg x"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\arcctg(-x) = \pi - \arcctg x"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\arcsin x + \arccos x = \frac{\pi}{2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\arctg x + \arcctg x = \frac{\pi}{2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\sin(\arccos x) = \sqrt{1 - x^2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="\cos(\arcsin x) = \sqrt{1 - x^2}"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="formula-group-derivatives" class="formula-group">
+            <h3>📈 Производные тригонометрических функций</h3>
+            <div class="formula-grid formula-grid-wide">
+              <div class="formula-card">
+                <div class="math-display" data-latex="(\sin x)' = \cos x"></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="(\cos x)' = -\sin x"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="(\operatorname{tg} x)' = \frac{1}{\cos^2 x}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="(\operatorname{ctg} x)' = -\frac{1}{\sin^2 x}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="(\arctg x)' = \frac{1}{1 + x^2}"
+                ></div>
+              </div>
+              <div class="formula-card">
+                <div
+                  class="math-display"
+                  data-latex="(\arcctg x)' = -\frac{1}{1 + x^2}"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="formula-group-values"
+            class="formula-group"
+            style="display: flex; flex-direction: column"
+          >
+            <h3>📊 Табличные значения тригонометрических функций</h3>
+            <div style="overflow-x: auto; margin-top: 15px; align-self: center">
+              <table class="sign-table" style="min-width: 600px">
+                <thead>
+                  <tr>
+                    <th>Угол (рад)</th>
+                    <th><span class="math-inline" data-latex="0"></span></th>
+                    <th>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\pi}{6}"
+                      ></span>
+                    </th>
+                    <th>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\pi}{4}"
+                      ></span>
+                    </th>
+                    <th>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\pi}{3}"
+                      ></span>
+                    </th>
+                    <th>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\pi}{2}"
+                      ></span>
+                    </th>
+                    <th><span class="math-inline" data-latex="\pi"></span></th>
+                    <th>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{3\pi}{2}"
+                      ></span>
+                    </th>
+                    <th><span class="math-inline" data-latex="2\pi"></span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Угол (°)</td>
+                    <td>0°</td>
+                    <td>30°</td>
+                    <td>45°</td>
+                    <td>60°</td>
+                    <td>90°</td>
+                    <td>180°</td>
+                    <td>270°</td>
+                    <td>360°</td>
+                  </tr>
+                  <tr>
+                    <td><span class="math-inline" data-latex="\sin"></span></td>
+                    <td>0</td>
+                    <td>
+                      <span class="math-inline" data-latex="\frac{1}{2}"></span>
+                    </td>
+                    <td>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\sqrt{2}}{2}"
+                      ></span>
+                    </td>
+                    <td>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\sqrt{3}}{2}"
+                      ></span>
+                    </td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>-1</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td><span class="math-inline" data-latex="\cos"></span></td>
+                    <td>1</td>
+                    <td>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\sqrt{3}}{2}"
+                      ></span>
+                    </td>
+                    <td>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\sqrt{2}}{2}"
+                      ></span>
+                    </td>
+                    <td>
+                      <span class="math-inline" data-latex="\frac{1}{2}"></span>
+                    </td>
+                    <td>0</td>
+                    <td>-1</td>
+                    <td>0</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span
+                        class="math-inline"
+                        data-latex="\operatorname{tg}"
+                      ></span>
+                    </td>
+                    <td>0</td>
+                    <td>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\sqrt{3}}{3}"
+                      ></span>
+                    </td>
+                    <td>1</td>
+                    <td>
+                      <span class="math-inline" data-latex="\sqrt{3}"></span>
+                    </td>
+                    <td>—</td>
+                    <td>0</td>
+                    <td>—</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span
+                        class="math-inline"
+                        data-latex="\operatorname{ctg}"
+                      ></span>
+                    </td>
+                    <td>—</td>
+                    <td>
+                      <span class="math-inline" data-latex="\sqrt{3}"></span>
+                    </td>
+                    <td>1</td>
+                    <td>
+                      <span
+                        class="math-inline"
+                        data-latex="\frac{\sqrt{3}}{3}"
+                      ></span>
+                    </td>
+                    <td>0</td>
+                    <td>—</td>
+                    <td>0</td>
+                    <td>—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-      </article>
-      </div>
+      </section>
 
-      <div id="subpanel-uni" class="subpanel" role="tabpanel" aria-labelledby="subtab-uni" tabindex="0" hidden>
-      <article class="problem">
-        <h4 class="problem__name">Задача 1</h4>
-        <p class="problem-text">Упростите <span class="math-inline" data-latex="\sin\alpha\cos\alpha\cos 2\alpha\cos 4\alpha"></span> (выразите через <span class="math-inline" data-latex="\sin 8\alpha"></span>).</p>
-        <button type="button" class="solution-toggle" id="btn-sol-uni-1" aria-expanded="false" aria-controls="sol-uni-1">Показать ответ</button>
-        <div class="solution" id="sol-uni-1" role="region" aria-labelledby="btn-sol-uni-1" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>Домножим и разделим на <span class="math-inline" data-latex="8"></span>, используя <span class="math-inline" data-latex="\sin 2t = 2\sin t\cos t"></span> несколько раз:</p>
-          <div class="math-display" data-latex="\sin\alpha\cos\alpha\cos 2\alpha\cos 4\alpha = \dfrac{2\sin\alpha\cos\alpha}{2}\cos 2\alpha\cos 4\alpha = \dfrac{\sin 2\alpha}{2}\cos 2\alpha\cos 4\alpha"></div>
-          <div class="math-display" data-latex="= \dfrac{2\sin 2\alpha\cos 2\alpha}{4}\cos 4\alpha = \dfrac{\sin 4\alpha\cos 4\alpha}{4} = \dfrac{\sin 8\alpha}{8}."></div>
-          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{\sin 8\alpha}{8}"></span>.</p>
+      <section
+        id="panel-problems"
+        class="panel"
+        role="tabpanel"
+        aria-labelledby="tab-problems"
+        tabindex="0"
+        hidden
+      >
+        <h2>Применение тригонометрических функций в решении задач</h2>
+        <p class="panel-lead">
+          В каждом разделе представлены задачи с подробными решениями.
+        </p>
+
+        <div
+          class="subtabs"
+          role="tablist"
+          aria-label="Уровень сложности задач"
+        >
+          <button
+            type="button"
+            class="subtab subtab--active"
+            role="tab"
+            id="subtab-school"
+            aria-selected="true"
+            aria-controls="subpanel-school"
+            data-subpanel="school"
+          >
+            Школьные задачи
+          </button>
+          <button
+            type="button"
+            class="subtab"
+            role="tab"
+            id="subtab-oge"
+            aria-selected="false"
+            aria-controls="subpanel-oge"
+            data-subpanel="oge"
+          >
+            Уровень ОГЭ
+          </button>
+          <button
+            type="button"
+            class="subtab"
+            role="tab"
+            id="subtab-ege"
+            aria-selected="false"
+            aria-controls="subpanel-ege"
+            data-subpanel="ege"
+          >
+            Уровень ЕГЭ
+          </button>
+          <button
+            type="button"
+            class="subtab"
+            role="tab"
+            id="subtab-uni"
+            aria-selected="false"
+            aria-controls="subpanel-uni"
+            data-subpanel="uni"
+          >
+            Уровень вуза
+          </button>
         </div>
-      </article>
 
-      <article class="problem">
-        <h4 class="problem__name">Задача 2</h4>
-        <p class="problem-text">Упростите выражение <span class="math-inline" data-latex="\dfrac{\sin 5x + \sin 3x}{\cos 5x + \cos 3x}"></span> (при <span class="math-inline" data-latex="\cos 5x + \cos 3x \neq 0"></span>).</p>
-        <button type="button" class="solution-toggle" id="btn-sol-uni-2" aria-expanded="false" aria-controls="sol-uni-2">Показать ответ</button>
-        <div class="solution" id="sol-uni-2" role="region" aria-labelledby="btn-sol-uni-2" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>Преобразуем числитель и знаменатель по формулам суммы:</p>
-          <div class="math-display" data-latex="\sin 5x + \sin 3x = 2\sin 4x\cos x,\qquad \cos 5x + \cos 3x = 2\cos 4x\cos x"></div>
-          <p>При <span class="math-inline" data-latex="\cos x \neq 0"></span> сокращаем <span class="math-inline" data-latex="\cos x"></span>:</p>
-          <div class="math-display" data-latex="\dfrac{2\sin 4x\cos x}{2\cos 4x\cos x} = \dfrac{\sin 4x}{\cos 4x} = \operatorname{tg} 4x."></div>
-          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\operatorname{tg} 4x"></span> (при указанных ограничениях).</p>
+        <div
+          id="subpanel-school"
+          class="subpanel"
+          role="tabpanel"
+          aria-labelledby="subtab-school"
+          tabindex="0"
+        >
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 1. Вычисление значения выражения
+            </h4>
+            <p class="problem-text">
+              Вычислить значение выражения
+              <span
+                class="math-inline"
+                data-latex="\sin\frac{\pi}{12} \cdot \cos\frac{\pi}{12}"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-school-1"
+              aria-expanded="false"
+              aria-controls="sol-school-1"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-school-1"
+              role="region"
+              aria-labelledby="btn-sol-school-1"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>Воспользуемся формулой двойного угла для синуса:</p>
+              <div
+                class="math-display"
+                data-latex="\sin 2x = 2\sin x\cos x"
+              ></div>
+              <p>Выразим произведение:</p>
+              <div
+                class="math-display"
+                data-latex="\sin x\cos x = \frac{1}{2}\sin 2x"
+              ></div>
+              <p>
+                Применим для
+                <span class="math-inline" data-latex="x = \frac{\pi}{12}"></span
+                >:
+              </p>
+              <div
+                class="math-display"
+                data-latex="\sin\frac{\pi}{12}\cos\frac{\pi}{12} = \frac{1}{2}\sin\left(2 \cdot \frac{\pi}{12}\right) = \frac{1}{2}\sin\frac{\pi}{6}"
+              ></div>
+              <p>
+                Так как
+                <span
+                  class="math-inline"
+                  data-latex="\sin\frac{\pi}{6} = \frac{1}{2}"
+                ></span
+                >, получаем:
+              </p>
+              <div
+                class="math-display"
+                data-latex="\frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}"
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="\frac{1}{4}"></span>.
+              </p>
+            </div>
+          </article>
         </div>
-      </article>
 
-      <article class="problem">
-        <h4 class="problem__name">Задача 3</h4>
-        <p class="problem-text">Найдите значение <span class="math-inline" data-latex="\arcsin\dfrac{1}{2} + \arccos\dfrac{\sqrt{3}}{2}"></span> (в радианах).</p>
-        <button type="button" class="solution-toggle" id="btn-sol-uni-3" aria-expanded="false" aria-controls="sol-uni-3">Показать ответ</button>
-        <div class="solution" id="sol-uni-3" role="region" aria-labelledby="btn-sol-uni-3" hidden>
-          <h4 class="solution__heading">Решение</h4>
-          <p>Находим значения по определению:</p>
-          <div class="math-display" data-latex="\arcsin\dfrac{1}{2} = \dfrac{\pi}{6},\qquad \arccos\dfrac{\sqrt{3}}{2} = \dfrac{\pi}{6}."></div>
-          <p>Сумма:</p>
-          <div class="math-display" data-latex="\dfrac{\pi}{6} + \dfrac{\pi}{6} = \dfrac{\pi}{3}."></div>
-          <p><strong>Ответ:</strong> <span class="math-inline" data-latex="\dfrac{\pi}{3}"></span>.</p>
+        <div
+          id="subpanel-oge"
+          class="subpanel"
+          role="tabpanel"
+          aria-labelledby="subtab-oge"
+          tabindex="0"
+          hidden
+        >
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 2. Задание 15. Задача на вычисление косинуса угла
+            </h4>
+            <p class="problem-text">
+              В треугольнике
+              <span class="math-inline" data-latex="ABC"></span> угол
+              <span class="math-inline" data-latex="C"></span> равен
+              <span class="math-inline" data-latex="90^\circ"></span>,
+              <span class="math-inline" data-latex="BC = 8"></span>,
+              <span class="math-inline" data-latex="AB = 10"></span>. Найдите
+              <span class="math-inline" data-latex="\cos B"></span>.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-oge-1"
+              aria-expanded="false"
+              aria-controls="sol-oge-1"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-oge-1"
+              role="region"
+              aria-labelledby="btn-sol-oge-1"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                В прямоугольном треугольнике косинус острого угла равен
+                отношению прилежащего катета к гипотенузе.
+              </p>
+              <p>
+                Для угла
+                <span class="math-inline" data-latex="B"></span> прилежащий
+                катет — <span class="math-inline" data-latex="BC = 8"></span>,
+                гипотенуза —
+                <span class="math-inline" data-latex="AB = 10"></span>.
+              </p>
+              <div
+                class="math-display"
+                data-latex="\cos B = \frac{BC}{AB} = \frac{8}{10} = 0,8"
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="0,8"></span>.
+              </p>
+            </div>
+          </article>
         </div>
-      </article>
-      </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <p>Формулы отображаются с помощью <a href="https://katex.org/" rel="noopener noreferrer" target="_blank">KaTeX</a>.</p>
-  </footer>
+        <div
+          id="subpanel-ege"
+          class="subpanel"
+          role="tabpanel"
+          aria-labelledby="subtab-ege"
+          tabindex="0"
+          hidden
+        >
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 3. Простейшее тригонометрическое уравнение
+            </h4>
+            <p class="problem-text">
+              Решите уравнение:
+              <span
+                class="math-inline"
+                data-latex="\sin x = \frac{\sqrt{3}}{2}"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-ege-1"
+              aria-expanded="false"
+              aria-controls="sol-ege-1"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-ege-1"
+              role="region"
+              aria-labelledby="btn-sol-ege-1"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                Раздел находится в разработке. Полное решение будет добавлено
+                позже.
+              </p>
+              <p>
+                <strong>Ответ:</strong>
+                <span
+                  class="math-inline"
+                  data-latex="x = (-1)^n \frac{\pi}{3} + \pi n,\ n \in \mathbb{Z}"
+                ></span
+                >.
+              </p>
+            </div>
+          </article>
+          <p class="note">
+            Раздел «Применение тригонометрических функций в решении задач ЕГЭ»
+            будет дополнен подробными решениями задач 6, 9, 11, 12, 13.
+            (уравнения, неравенства, графики, отбор корней).
+          </p>
+        </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
-</body>
+        <div
+          id="subpanel-uni"
+          class="subpanel"
+          role="tabpanel"
+          aria-labelledby="subtab-uni"
+          tabindex="0"
+          hidden
+        >
+          <article class="problem">
+            <h4 class="problem__name">Задача повышенной сложности</h4>
+            <p class="problem-text">
+              Вычислите предел:
+              <span
+                class="math-inline"
+                data-latex="\lim_{x \to 0} \frac{\sin 3x}{x}"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-uni-1"
+              aria-expanded="false"
+              aria-controls="sol-uni-1"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-uni-1"
+              role="region"
+              aria-labelledby="btn-sol-uni-1"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>Используем первый замечательный предел:</p>
+              <div
+                class="math-display"
+                data-latex="\lim_{x \to 0} \frac{\sin 3x}{x} = \lim_{x \to 0} \frac{3\sin 3x}{3x} = 3 \cdot 1 = 3"
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="3"></span>.
+              </p>
+            </div>
+          </article>
+          <p class="note">
+            Раздел «Применение тригонометрических функций в решении задач уровня
+            высших учебных заведений» будет дополнен задачами на пределы,
+            производные, интегралы и ряды.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Воронежский государственный педагогический университет – 2026</p>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
 </html>
