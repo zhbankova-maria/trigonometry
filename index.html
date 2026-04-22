@@ -1761,6 +1761,225 @@
               </p>
             </div>
           </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 2. Упрощение тригонометрического выражения
+            </h4>
+            <p class="problem-text">
+              Упростите выражение
+              <span
+                class="math-inline"
+                data-latex="\dfrac{\sin 2\alpha}{1 + \cos 2\alpha}"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-school-2"
+              aria-expanded="false"
+              aria-controls="sol-school-2"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-school-2"
+              role="region"
+              aria-labelledby="btn-sol-school-2"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>Воспользуемся формулами двойного угла:</p>
+              <div
+                class="math-display"
+                data-latex="\sin 2\alpha = 2\sin\alpha\cos\alpha, \qquad 1 + \cos 2\alpha = 2\cos^2\alpha."
+              ></div>
+              <p>Подставим эти выражения в исходную дробь:</p>
+              <div
+                class="math-display"
+                data-latex="\frac{\sin 2\alpha}{1 + \cos 2\alpha} = \frac{2\sin\alpha\cos\alpha}{2\cos^2\alpha} = \frac{\sin\alpha}{\cos\alpha} = \tan\alpha."
+              ></div>
+              <p>
+                Преобразование справедливо при
+                <span
+                  class="math-inline"
+                  data-latex="\cos\alpha \ne 0"
+                ></span
+                >, то есть
+                <span
+                  class="math-inline"
+                  data-latex="\alpha \ne \dfrac{\pi}{2} + \pi k,\ k \in \mathbb{Z}"
+                ></span
+                >.
+              </p>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="\tan\alpha"></span>.
+              </p>
+            </div>
+          </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 3. Доказательство тождества
+            </h4>
+            <p class="problem-text">
+              Докажите тождество
+              <span
+                class="math-inline"
+                data-latex="\sin^6 x + \cos^6 x = 1 - 3\sin^2 x\cos^2 x"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-school-3"
+              aria-expanded="false"
+              aria-controls="sol-school-3"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-school-3"
+              role="region"
+              aria-labelledby="btn-sol-school-3"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                Применим формулу суммы кубов
+                <span
+                  class="math-inline"
+                  data-latex="a^3 + b^3 = (a+b)(a^2 - ab + b^2)"
+                ></span>
+                к выражению, положив
+                <span
+                  class="math-inline"
+                  data-latex="a = \sin^2 x,\ b = \cos^2 x"
+                ></span
+                >:
+              </p>
+              <div
+                class="math-display"
+                data-latex="\sin^6 x + \cos^6 x = (\sin^2 x + \cos^2 x)\bigl((\sin^2 x)^2 - \sin^2 x\cos^2 x + (\cos^2 x)^2\bigr)."
+              ></div>
+              <p>
+                Поскольку
+                <span
+                  class="math-inline"
+                  data-latex="\sin^2 x + \cos^2 x = 1"
+                ></span
+                >, остаётся упростить вторую скобку:
+              </p>
+              <div
+                class="math-display"
+                data-latex="\sin^4 x + \cos^4 x = (\sin^2 x + \cos^2 x)^2 - 2\sin^2 x\cos^2 x = 1 - 2\sin^2 x\cos^2 x."
+              ></div>
+              <p>Подставляем и получаем:</p>
+              <div
+                class="math-display"
+                data-latex="\sin^6 x + \cos^6 x = 1 - 2\sin^2 x\cos^2 x - \sin^2 x\cos^2 x = 1 - 3\sin^2 x\cos^2 x."
+              ></div>
+              <p>Тождество доказано.</p>
+            </div>
+          </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 4. Нахождение значения выражения по условию
+            </h4>
+            <p class="problem-text">
+              Известно, что
+              <span
+                class="math-inline"
+                data-latex="\sin\alpha + \cos\alpha = \dfrac{1}{2}"
+              ></span
+              >. Найдите значение
+              <span class="math-inline" data-latex="\sin 2\alpha"></span> и
+              <span
+                class="math-inline"
+                data-latex="\sin^3\alpha + \cos^3\alpha"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-school-4"
+              aria-expanded="false"
+              aria-controls="sol-school-4"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-school-4"
+              role="region"
+              aria-labelledby="btn-sol-school-4"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>Возведём обе части данного равенства в квадрат:</p>
+              <div
+                class="math-display"
+                data-latex="(\sin\alpha + \cos\alpha)^2 = \frac{1}{4}."
+              ></div>
+              <p>
+                Раскроем скобки и воспользуемся основным тригонометрическим
+                тождеством:
+              </p>
+              <div
+                class="math-display"
+                data-latex="\sin^2\alpha + 2\sin\alpha\cos\alpha + \cos^2\alpha = \frac{1}{4} \ \Longrightarrow\ 1 + \sin 2\alpha = \frac{1}{4}."
+              ></div>
+              <p>Отсюда</p>
+              <div
+                class="math-display"
+                data-latex="\sin 2\alpha = \frac{1}{4} - 1 = -\frac{3}{4}."
+              ></div>
+              <p>
+                Для второго выражения используем формулу суммы кубов
+                <span
+                  class="math-inline"
+                  data-latex="a^3 + b^3 = (a+b)(a^2 - ab + b^2)"
+                ></span
+                >:
+              </p>
+              <div
+                class="math-display"
+                data-latex="\sin^3\alpha + \cos^3\alpha = (\sin\alpha + \cos\alpha)(1 - \sin\alpha\cos\alpha)."
+              ></div>
+              <p>
+                Заметим, что
+                <span
+                  class="math-inline"
+                  data-latex="\sin\alpha\cos\alpha = \tfrac{1}{2}\sin 2\alpha = -\tfrac{3}{8}"
+                ></span
+                >, поэтому
+              </p>
+              <div
+                class="math-display"
+                data-latex="\sin^3\alpha + \cos^3\alpha = \frac{1}{2} \cdot \left(1 - \left(-\frac{3}{8}\right)\right) = \frac{1}{2} \cdot \frac{11}{8} = \frac{11}{16}."
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span
+                  class="math-inline"
+                  data-latex="\sin 2\alpha = -\dfrac{3}{4}"
+                ></span
+                >,
+                <span
+                  class="math-inline"
+                  data-latex="\sin^3\alpha + \cos^3\alpha = \dfrac{11}{16}"
+                ></span
+                >.
+              </p>
+            </div>
+          </article>
         </div>
 
         <div
@@ -1822,6 +2041,196 @@
               </p>
             </div>
           </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 2. Площадь треугольника через синус
+            </h4>
+            <p class="problem-text">
+              В треугольнике
+              <span class="math-inline" data-latex="ABC"></span>
+              известно, что
+              <span class="math-inline" data-latex="AB = 10"></span>,
+              <span class="math-inline" data-latex="AC = 14"></span>, а угол
+              <span
+                class="math-inline"
+                data-latex="A = 150^\circ"
+              ></span>. Найдите площадь треугольника.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-oge-2"
+              aria-expanded="false"
+              aria-controls="sol-oge-2"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-oge-2"
+              role="region"
+              aria-labelledby="btn-sol-oge-2"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                Площадь треугольника, заданного двумя сторонами и углом между
+                ними, вычисляется по формуле
+              </p>
+              <div
+                class="math-display"
+                data-latex="S = \frac{1}{2} \cdot AB \cdot AC \cdot \sin A."
+              ></div>
+              <p>
+                Так как
+                <span
+                  class="math-inline"
+                  data-latex="\sin 150^\circ = \sin(180^\circ - 30^\circ) = \sin 30^\circ = \tfrac{1}{2}"
+                ></span
+                >, получаем
+              </p>
+              <div
+                class="math-display"
+                data-latex="S = \frac{1}{2} \cdot 10 \cdot 14 \cdot \frac{1}{2} = 35."
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="35"></span>.
+              </p>
+            </div>
+          </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 3. Банк ФИПИ № 356170. Теорема синусов
+            </h4>
+            <p class="problem-text">
+              В треугольнике
+              <span class="math-inline" data-latex="ABC"></span> угол
+              <span class="math-inline" data-latex="A"></span> равен
+              <span class="math-inline" data-latex="45^\circ"></span>, угол
+              <span class="math-inline" data-latex="B"></span> —
+              <span class="math-inline" data-latex="30^\circ"></span>,
+              <span class="math-inline" data-latex="BC = 3\sqrt{2}"></span>.
+              Найдите
+              <span class="math-inline" data-latex="AC"></span>.
+              <small
+                >(<a
+                  href="https://math-oge.sdamgia.ru/problem?id=356170"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Решу ОГЭ, № 356170</a
+                >.)</small
+              >
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-oge-3"
+              aria-expanded="false"
+              aria-controls="sol-oge-3"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-oge-3"
+              role="region"
+              aria-labelledby="btn-sol-oge-3"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                По теореме синусов сторона пропорциональна синусу противолежащего
+                угла:
+              </p>
+              <div
+                class="math-display"
+                data-latex="\frac{AC}{\sin B} = \frac{BC}{\sin A}."
+              ></div>
+              <p>Подставим данные:</p>
+              <div
+                class="math-display"
+                data-latex="\frac{AC}{\sin 30^\circ} = \frac{3\sqrt{2}}{\sin 45^\circ} \quad\Longrightarrow\quad AC = \frac{3\sqrt{2} \cdot \tfrac{1}{2}}{\tfrac{\sqrt{2}}{2}} = 3."
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="3"></span>.
+              </p>
+            </div>
+          </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 4. Банк ФИПИ № 316346. Описанная окружность
+            </h4>
+            <p class="problem-text">
+              Боковая сторона равнобедренного треугольника равна
+              <span class="math-inline" data-latex="4"></span>. Угол при вершине,
+              противолежащий основанию, равен
+              <span class="math-inline" data-latex="120^\circ"></span>.               Найдите диаметр окружности, описанной около этого
+              треугольника.
+              <small
+                >(<a
+                  href="https://math-oge.sdamgia.ru/problem?id=316346"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Решу ОГЭ, № 316346</a
+                >.)</small
+              >
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-oge-4"
+              aria-expanded="false"
+              aria-controls="sol-oge-4"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-oge-4"
+              role="region"
+              aria-labelledby="btn-sol-oge-4"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                Пусть в треугольнике
+                <span class="math-inline" data-latex="ABC"></span> равны
+                <span class="math-inline" data-latex="AB = AC = 4"></span>, а
+                угол
+                <span class="math-inline" data-latex="A = 120^\circ"></span>
+                лежит между боковыми сторонами. Тогда сторона
+                <span class="math-inline" data-latex="BC"></span> противолежит
+                углу
+                <span class="math-inline" data-latex="A"></span>. По теореме
+                косинусов:
+              </p>
+              <div
+                class="math-display"
+                data-latex="BC^2 = AB^2 + AC^2 - 2\cdot AB\cdot AC\cdot\cos 120^\circ = 16 + 16 - 32\cdot\left(-\tfrac{1}{2}\right) = 48."
+              ></div>
+              <p>
+                Следовательно,
+                <span
+                  class="math-inline"
+                  data-latex="BC = \sqrt{48} = 4\sqrt{3}"
+                ></span
+                >. По теореме синусов для описанной окружности
+              </p>
+              <div
+                class="math-display"
+                data-latex="2R = \frac{BC}{\sin A} = \frac{4\sqrt{3}}{\sin 120^\circ} = \frac{4\sqrt{3}}{\sqrt{3}/2} = 8."
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="8"></span>.
+              </p>
+            </div>
+          </article>
         </div>
 
         <div
@@ -1862,8 +2271,47 @@
             >
               <h4 class="solution__heading">Решение</h4>
               <p>
-                Раздел находится в разработке. Полное решение будет добавлено
-                позже.
+                Общее решение простейшего тригонометрического уравнения
+                <span
+                  class="math-inline"
+                  data-latex="\sin x = a"
+                ></span>
+                при
+                <span
+                  class="math-inline"
+                  data-latex="|a| \le 1"
+                ></span>
+                имеет вид
+                <span
+                  class="math-inline"
+                  data-latex="x = (-1)^n \arcsin a + \pi n,\ n \in \mathbb{Z}"
+                ></span
+                >.
+              </p>
+              <p>
+                В нашем случае
+                <span
+                  class="math-inline"
+                  data-latex="\arcsin\dfrac{\sqrt{3}}{2} = \dfrac{\pi}{3}"
+                ></span
+                >, поэтому
+              </p>
+              <div
+                class="math-display"
+                data-latex="x = (-1)^n \frac{\pi}{3} + \pi n,\ n \in \mathbb{Z}."
+              ></div>
+              <p>
+                Эквивалентная запись двумя сериями:
+                <span
+                  class="math-inline"
+                  data-latex="x = \dfrac{\pi}{3} + 2\pi k"
+                ></span>
+                или
+                <span
+                  class="math-inline"
+                  data-latex="x = \dfrac{2\pi}{3} + 2\pi k,\ k \in \mathbb{Z}"
+                ></span
+                >.
               </p>
               <p>
                 <strong>Ответ:</strong>
@@ -1875,11 +2323,405 @@
               </p>
             </div>
           </article>
-          <p class="note">
-            Раздел «Применение тригонометрических функций в решении задач ЕГЭ»
-            будет дополнен подробными решениями задач 6, 9, 11, 12, 13.
-            (уравнения, неравенства, графики, отбор корней).
-          </p>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 4. Уравнение, сводящееся к квадратному
+            </h4>
+            <p class="problem-text">
+              Решите уравнение
+              <span
+                class="math-inline"
+                data-latex="2\sin^2 x + \sin x - 1 = 0"
+              ></span>
+              и укажите корни, принадлежащие отрезку
+              <span
+                class="math-inline"
+                data-latex="\left[0;\, 2\pi\right]"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-ege-2"
+              aria-expanded="false"
+              aria-controls="sol-ege-2"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-ege-2"
+              role="region"
+              aria-labelledby="btn-sol-ege-2"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                Сделаем замену
+                <span
+                  class="math-inline"
+                  data-latex="t = \sin x"
+                ></span>, где
+                <span
+                  class="math-inline"
+                  data-latex="t \in [-1;\, 1]"
+                ></span
+                >. Уравнение принимает вид
+              </p>
+              <div
+                class="math-display"
+                data-latex="2t^2 + t - 1 = 0."
+              ></div>
+              <p>
+                Дискриминант
+                <span
+                  class="math-inline"
+                  data-latex="D = 1 + 8 = 9"
+                ></span
+                >, корни:
+              </p>
+              <div
+                class="math-display"
+                data-latex="t_1 = \frac{-1 + 3}{4} = \frac{1}{2}, \qquad t_2 = \frac{-1 - 3}{4} = -1."
+              ></div>
+              <p>Возвращаемся к переменной:</p>
+              <div
+                class="math-display"
+                data-latex="\sin x = \frac{1}{2} \quad\text{или}\quad \sin x = -1."
+              ></div>
+              <p>
+                Первое уравнение даёт
+                <span
+                  class="math-inline"
+                  data-latex="x = \dfrac{\pi}{6} + 2\pi k"
+                ></span>
+                или
+                <span
+                  class="math-inline"
+                  data-latex="x = \dfrac{5\pi}{6} + 2\pi k"
+                ></span
+                >, второе —
+                <span
+                  class="math-inline"
+                  data-latex="x = -\dfrac{\pi}{2} + 2\pi k"
+                ></span
+                >.
+              </p>
+              <p>
+                На отрезке
+                <span
+                  class="math-inline"
+                  data-latex="[0;\, 2\pi]"
+                ></span>
+                выбираем корни:
+              </p>
+              <div
+                class="math-display"
+                data-latex="x = \frac{\pi}{6}, \quad x = \frac{5\pi}{6}, \quad x = \frac{3\pi}{2}."
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span
+                  class="math-inline"
+                  data-latex="\dfrac{\pi}{6},\ \dfrac{5\pi}{6},\ \dfrac{3\pi}{2}"
+                ></span
+                >.
+              </p>
+            </div>
+          </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 5. Банк ФИПИ № 507595. Косинус двойного угла и сдвиг
+              аргумента
+            </h4>
+            <p class="problem-text">
+              а) Решите уравнение
+              <span
+                class="math-inline"
+                data-latex="\cos 2x = \sin\left(x + \frac{\pi}{6}\right)"
+              ></span
+              >.<br />
+              б) Найдите корни этого уравнения, принадлежащие отрезку
+              <span
+                class="math-inline"
+                data-latex="\left[-2\pi;\, -\pi\right]"
+              ></span
+              >.
+              <small
+                >(<a
+                  href="https://math-ege.sdamgia.ru/problem?id=507595"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Решу ЕГЭ, № 507595</a
+                >.)</small
+              >
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-ege-3"
+              aria-expanded="false"
+              aria-controls="sol-ege-3"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-ege-3"
+              role="region"
+              aria-labelledby="btn-sol-ege-3"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                <strong>а)</strong> Используем формулу приведения
+                <span
+                  class="math-inline"
+                  data-latex="\sin\left(x + \frac{\pi}{6}\right) = \cos\left(\frac{\pi}{2} - x - \frac{\pi}{6}\right) = \cos\left(\frac{\pi}{3} - x\right)"
+                ></span
+                >. Тогда
+              </p>
+              <div
+                class="math-display"
+                data-latex="\cos 2x = \cos\left(\frac{\pi}{3} - x\right)."
+              ></div>
+              <p>
+                Равенство косинусов:
+                <span
+                  class="math-inline"
+                  data-latex="2x = \pm\left(\frac{\pi}{3} - x\right) + 2\pi k,\ k \in \mathbb{Z}"
+                ></span
+                >.
+              </p>
+              <p>В случае «+»:</p>
+              <div
+                class="math-display"
+                data-latex="3x = \frac{\pi}{3} + 2\pi k \quad\Longrightarrow\quad x = \frac{\pi}{9} + \frac{2\pi k}{3}."
+              ></div>
+              <p>В случае «−»:</p>
+              <div
+                class="math-display"
+                data-latex="x = -\frac{\pi}{3} + 2\pi k."
+              ></div>
+              <p>
+                <strong>б)</strong> На отрезке
+                <span
+                  class="math-inline"
+                  data-latex="\left[-2\pi;\, -\pi\right]"
+                ></span>
+                подходят только значения из серии
+                <span
+                  class="math-inline"
+                  data-latex="x = \frac{\pi}{9} + \frac{2\pi k}{3}"
+                ></span
+                >: при
+                <span class="math-inline" data-latex="k = -3"></span> и
+                <span class="math-inline" data-latex="k = -2"></span> получаем
+                <span
+                  class="math-inline"
+                  data-latex="x = -\frac{17\pi}{9}"
+                ></span>
+                и
+                <span
+                  class="math-inline"
+                  data-latex="x = -\frac{11\pi}{9}"
+                ></span
+                >; остальные
+                <span class="math-inline" data-latex="k"></span> дают точки вне
+                отрезка.
+              </p>
+              <p>
+                <strong>Ответ:</strong> а)
+                <span
+                  class="math-inline"
+                  data-latex="x = \frac{\pi}{9} + \frac{2\pi k}{3}"
+                ></span
+                >,
+                <span
+                  class="math-inline"
+                  data-latex="x = -\frac{\pi}{3} + 2\pi k,\ k \in \mathbb{Z}"
+                ></span
+                >; б)
+                <span
+                  class="math-inline"
+                  data-latex="-\frac{17\pi}{9},\ -\frac{11\pi}{9}"
+                ></span
+                >.
+              </p>
+            </div>
+          </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 6. Задание 13 ЕГЭ: уравнение и отбор корней
+            </h4>
+            <p class="problem-text">
+              а) Решите уравнение
+              <span
+                class="math-inline"
+                data-latex="\cos 2x + 5\sin x + 2 = 0"
+              ></span
+              >. <br />
+              б) Найдите все корни этого уравнения, принадлежащие отрезку
+              <span
+                class="math-inline"
+                data-latex="\left[-2\pi;\, -\dfrac{\pi}{2}\right]"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-ege-4"
+              aria-expanded="false"
+              aria-controls="sol-ege-4"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-ege-4"
+              role="region"
+              aria-labelledby="btn-sol-ege-4"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                <strong>а)</strong> Воспользуемся формулой двойного угла
+                <span
+                  class="math-inline"
+                  data-latex="\cos 2x = 1 - 2\sin^2 x"
+                ></span
+                >:
+              </p>
+              <div
+                class="math-display"
+                data-latex="1 - 2\sin^2 x + 5\sin x + 2 = 0 \ \Longleftrightarrow\ 2\sin^2 x - 5\sin x - 3 = 0."
+              ></div>
+              <p>
+                Пусть
+                <span
+                  class="math-inline"
+                  data-latex="t = \sin x"
+                ></span
+                >,
+                <span
+                  class="math-inline"
+                  data-latex="t \in [-1;\, 1]"
+                ></span
+                >. Тогда
+                <span
+                  class="math-inline"
+                  data-latex="2t^2 - 5t - 3 = 0"
+                ></span
+                >,
+                <span
+                  class="math-inline"
+                  data-latex="D = 25 + 24 = 49"
+                ></span
+                >,
+              </p>
+              <div
+                class="math-display"
+                data-latex="t_1 = \frac{5+7}{4} = 3 \notin [-1;\,1], \qquad t_2 = \frac{5-7}{4} = -\frac{1}{2}."
+              ></div>
+              <p>
+                Остаётся уравнение
+                <span
+                  class="math-inline"
+                  data-latex="\sin x = -\dfrac{1}{2}"
+                ></span
+                >, откуда
+              </p>
+              <div
+                class="math-display"
+                data-latex="x = -\frac{\pi}{6} + 2\pi k \quad \text{или} \quad x = -\frac{5\pi}{6} + 2\pi k,\ k \in \mathbb{Z}."
+              ></div>
+              <p>
+                <strong>б)</strong> Отберём корни на отрезке
+                <span
+                  class="math-inline"
+                  data-latex="\left[-2\pi;\, -\dfrac{\pi}{2}\right]"
+                ></span
+                >. Используем числовой эквивалент:
+                <span
+                  class="math-inline"
+                  data-latex="-2\pi \approx -6{,}28"
+                ></span
+                >,
+                <span
+                  class="math-inline"
+                  data-latex="-\dfrac{\pi}{2} \approx -1{,}57"
+                ></span
+                >.
+              </p>
+              <ul>
+                <li>
+                  Серия
+                  <span
+                    class="math-inline"
+                    data-latex="x = -\dfrac{\pi}{6} + 2\pi k"
+                  ></span
+                  >: при
+                  <span
+                    class="math-inline"
+                    data-latex="k = 0"
+                  ></span>
+                  получаем
+                  <span
+                    class="math-inline"
+                    data-latex="-\dfrac{\pi}{6} \approx -0{,}52"
+                  ></span>
+                  — не входит; при
+                  <span
+                    class="math-inline"
+                    data-latex="k = -1"
+                  ></span>
+                  —
+                  <span
+                    class="math-inline"
+                    data-latex="-\dfrac{13\pi}{6} \approx -6{,}81"
+                  ></span>
+                  — не входит.
+                </li>
+                <li>
+                  Серия
+                  <span
+                    class="math-inline"
+                    data-latex="x = -\dfrac{5\pi}{6} + 2\pi k"
+                  ></span
+                  >: при
+                  <span
+                    class="math-inline"
+                    data-latex="k = 0"
+                  ></span>
+                  —
+                  <span
+                    class="math-inline"
+                    data-latex="-\dfrac{5\pi}{6} \approx -2{,}62"
+                  ></span>
+                  — входит.
+                </li>
+              </ul>
+              <p>
+                <strong>Ответ:</strong> а)
+                <span
+                  class="math-inline"
+                  data-latex="x = -\dfrac{\pi}{6} + 2\pi k,\ x = -\dfrac{5\pi}{6} + 2\pi k,\ k \in \mathbb{Z}"
+                ></span
+                >;<br />
+                б)
+                <span
+                  class="math-inline"
+                  data-latex="-\dfrac{5\pi}{6}"
+                ></span
+                >.
+              </p>
+            </div>
+          </article>
         </div>
 
         <div
@@ -1891,12 +2733,14 @@
           hidden
         >
           <article class="problem">
-            <h4 class="problem__name">Задача повышенной сложности</h4>
+            <h4 class="problem__name">
+              Пример 1. Предел и формула разности косинусов
+            </h4>
             <p class="problem-text">
-              Вычислите предел:
+              Вычислите предел
               <span
                 class="math-inline"
-                data-latex="\lim_{x \to 0} \frac{\sin 3x}{x}"
+                data-latex="\displaystyle\lim_{x \to 0} \frac{\cos 3x - \cos 5x}{x^2}"
               ></span
               >.
             </p>
@@ -1917,22 +2761,297 @@
               hidden
             >
               <h4 class="solution__heading">Решение</h4>
-              <p>Используем первый замечательный предел:</p>
+              <p>
+                Преобразуем числитель по формуле разности косинусов
+                <span
+                  class="math-inline"
+                  data-latex="\cos\alpha - \cos\beta = -2\sin\frac{\alpha+\beta}{2}\,\sin\frac{\alpha-\beta}{2}"
+                ></span
+                >:
+              </p>
               <div
                 class="math-display"
-                data-latex="\lim_{x \to 0} \frac{\sin 3x}{x} = \lim_{x \to 0} \frac{3\sin 3x}{3x} = 3 \cdot 1 = 3"
+                data-latex="\cos 3x - \cos 5x = -2\sin 4x\,\sin(-x) = 2\sin 4x\,\sin x."
+              ></div>
+              <p>Тогда</p>
+              <div
+                class="math-display"
+                data-latex="\frac{\cos 3x - \cos 5x}{x^2} = 2\cdot\frac{\sin 4x}{x}\cdot\frac{\sin x}{x} = 8\cdot\frac{\sin 4x}{4x}\cdot\frac{\sin x}{x}."
+              ></div>
+              <p>
+                По первому замечательному пределу
+                <span
+                  class="math-inline"
+                  data-latex="\lim_{t\to 0}\frac{\sin t}{t}=1"
+                ></span
+                > получаем
+                <span
+                  class="math-inline"
+                  data-latex="\lim_{x\to 0}\frac{\sin 4x}{4x}=1"
+                ></span
+                > и
+                <span
+                  class="math-inline"
+                  data-latex="\lim_{x\to 0}\frac{\sin x}{x}=1"
+                ></span
+                >.
+              </p>
+              <div
+                class="math-display"
+                data-latex="\lim_{x \to 0} \frac{\cos 3x - \cos 5x}{x^2} = 8."
               ></div>
               <p>
                 <strong>Ответ:</strong>
-                <span class="math-inline" data-latex="3"></span>.
+                <span class="math-inline" data-latex="8"></span>.
               </p>
             </div>
           </article>
-          <p class="note">
-            Раздел «Применение тригонометрических функций в решении задач уровня
-            высших учебных заведений» будет дополнен задачами на пределы,
-            производные, интегралы и ряды.
-          </p>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 2. Производная и сложная тригонометрическая функция
+            </h4>
+            <p class="problem-text">
+              Найдите производную функции
+              <span
+                class="math-inline"
+                data-latex="y = \ln\bigl(1 + \sin^2 x\bigr)"
+              ></span
+              > и значение
+              <span class="math-inline" data-latex="y'\bigl(\tfrac{\pi}{4}\bigr)"></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-uni-2"
+              aria-expanded="false"
+              aria-controls="sol-uni-2"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-uni-2"
+              role="region"
+              aria-labelledby="btn-sol-uni-2"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                По правилу дифференцирования сложной функции
+                <span class="math-inline" data-latex="y = \ln u"></span>,
+                <span class="math-inline" data-latex="u = 1 + \sin^2 x"></span
+                >:
+              </p>
+              <div
+                class="math-display"
+                data-latex="y' = \frac{1}{1 + \sin^2 x}\cdot \frac{d}{dx}\bigl(1 + \sin^2 x\bigr) = \frac{2\sin x\cos x}{1 + \sin^2 x} = \frac{\sin 2x}{1 + \sin^2 x}."
+              ></div>
+              <p>
+                Подставим
+                <span class="math-inline" data-latex="x = \tfrac{\pi}{4}"></span
+                >:
+                <span
+                  class="math-inline"
+                  data-latex="\sin 2x = \sin\tfrac{\pi}{2} = 1"
+                ></span
+                >,
+                <span
+                  class="math-inline"
+                  data-latex="\sin^2 x = \bigl(\tfrac{\sqrt{2}}{2}\bigr)^2 = \tfrac{1}{2}"
+                ></span
+                >.
+              </p>
+              <div
+                class="math-display"
+                data-latex="y'\Bigl(\tfrac{\pi}{4}\Bigr) = \frac{1}{1 + \tfrac{1}{2}} = \frac{2}{3}."
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span
+                  class="math-inline"
+                  data-latex="y' = \dfrac{\sin 2x}{1 + \sin^2 x}"
+                ></span
+                >;
+                <span
+                  class="math-inline"
+                  data-latex="y'\bigl(\tfrac{\pi}{4}\bigr) = \tfrac{2}{3}"
+                ></span
+                >.
+              </p>
+            </div>
+          </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 3. Определённый интеграл и понижение степени синуса
+            </h4>
+            <p class="problem-text">
+              Вычислите интеграл
+              <span
+                class="math-inline"
+                data-latex="\displaystyle\int_0^{\pi/2} \sin^2 x\,dx"
+              ></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-uni-3"
+              aria-expanded="false"
+              aria-controls="sol-uni-3"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-uni-3"
+              role="region"
+              aria-labelledby="btn-sol-uni-3"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>Линеаризуем подынтегральное выражение:</p>
+              <div
+                class="math-display"
+                data-latex="\sin^2 x = \frac{1 - \cos 2x}{2}."
+              ></div>
+              <p>Тогда</p>
+              <div
+                class="math-display"
+                data-latex="\int_0^{\pi/2} \sin^2 x\,dx = \int_0^{\pi/2} \frac{1 - \cos 2x}{2}\,dx = \frac{1}{2}\int_0^{\pi/2} dx - \frac{1}{2}\int_0^{\pi/2} \cos 2x\,dx."
+              ></div>
+              <p>Находим первообразную для второго слагаемого:</p>
+              <div
+                class="math-display"
+                data-latex="\int \cos 2x\,dx = \frac{\sin 2x}{2} + C."
+              ></div>
+              <p>Следовательно,</p>
+              <div
+                class="math-display"
+                data-latex="\int_0^{\pi/2} \sin^2 x\,dx = \left[\frac{x}{2} - \frac{\sin 2x}{4}\right]_0^{\pi/2} = \frac{\pi}{4} - \frac{\sin\pi}{4} - 0 + 0 = \frac{\pi}{4}."
+              ></div>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="\dfrac{\pi}{4}"></span>.
+              </p>
+            </div>
+          </article>
+
+          <article class="problem">
+            <h4 class="problem__name">
+              Пример 4. Экстремумы на отрезке и синус суммы углов
+            </h4>
+            <p class="problem-text">
+              Найдите наибольшее и наименьшее значения функции
+              <span
+                class="math-inline"
+                data-latex="f(x) = \sqrt{3}\sin x - \cos x"
+              ></span>
+              на отрезке
+              <span class="math-inline" data-latex="\bigl[0,\,\pi\bigr]"></span
+              >.
+            </p>
+            <button
+              type="button"
+              class="solution-toggle"
+              id="btn-sol-uni-4"
+              aria-expanded="false"
+              aria-controls="sol-uni-4"
+            >
+              Показать решение
+            </button>
+            <div
+              class="solution"
+              id="sol-uni-4"
+              role="region"
+              aria-labelledby="btn-sol-uni-4"
+              hidden
+            >
+              <h4 class="solution__heading">Решение</h4>
+              <p>
+                Представим выражение в виде синуса суммы. Амплитуда
+                <span class="math-inline" data-latex="R = \sqrt{(\sqrt{3})^2 + (-1)^2} = 2"></span
+                >. Найдём
+                <span class="math-inline" data-latex="\varphi"></span> такое,
+                что
+              </p>
+              <div
+                class="math-display"
+                data-latex="\sqrt{3}\sin x - \cos x = 2\sin(x + \varphi)."
+              ></div>
+              <p>
+                Сравнивая с
+                <span
+                  class="math-inline"
+                  data-latex="2(\sin x\cos\varphi + \cos x\sin\varphi)"
+                ></span
+                >, получаем
+                <span
+                  class="math-inline"
+                  data-latex="\cos\varphi = \tfrac{\sqrt{3}}{2}"
+                ></span
+                >,
+                <span
+                  class="math-inline"
+                  data-latex="\sin\varphi = -\tfrac{1}{2}"
+                ></span
+                >, то есть
+                <span
+                  class="math-inline"
+                  data-latex="\varphi = -\tfrac{\pi}{6}"
+                ></span
+                >:
+              </p>
+              <div
+                class="math-display"
+                data-latex="f(x) = 2\sin\left(x - \frac{\pi}{6}\right)."
+              ></div>
+              <p>
+                При
+                <span class="math-inline" data-latex="x \in [0,\pi]"></span>
+                имеем
+                <span
+                  class="math-inline"
+                  data-latex="x - \tfrac{\pi}{6} \in \bigl[-\tfrac{\pi}{6},\,\tfrac{5\pi}{6}\bigr]"
+                ></span
+                >. На этом отрезке синус принимает наибольшее значение
+                <span class="math-inline" data-latex="1"></span> (при аргументе
+                <span class="math-inline" data-latex="\tfrac{\pi}{2}"></span
+                >) и наименьшее
+                <span class="math-inline" data-latex="-\tfrac{1}{2}"></span> (на
+                левом конце
+                <span class="math-inline" data-latex="-\tfrac{\pi}{6}"></span
+                >). Проверим концы отрезка по
+                <span class="math-inline" data-latex="x"></span>:
+                <span class="math-inline" data-latex="f(0) = -1"></span>,
+                <span class="math-inline" data-latex="f(\pi) = 1"></span>.
+              </p>
+              <p>
+                Наибольшее значение
+                <span class="math-inline" data-latex="2"></span> достигается при
+                <span
+                  class="math-inline"
+                  data-latex="x - \tfrac{\pi}{6} = \tfrac{\pi}{2}"
+                ></span
+                >, то есть при
+                <span class="math-inline" data-latex="x = \tfrac{2\pi}{3}"></span
+                >. Наименьшее значение
+                <span class="math-inline" data-latex="-1"></span> — в точке
+                <span class="math-inline" data-latex="x = 0"></span>.
+              </p>
+              <p>
+                <strong>Ответ:</strong>
+                <span class="math-inline" data-latex="f_{\max} = 2"></span>
+                (при
+                <span class="math-inline" data-latex="x = \tfrac{2\pi}{3}"></span
+                >),
+                <span class="math-inline" data-latex="f_{\min} = -1"></span> (при
+                <span class="math-inline" data-latex="x = 0"></span>).
+              </p>
+            </div>
+          </article>
         </div>
       </section>
     </main>
